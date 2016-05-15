@@ -168,10 +168,10 @@ class Setup
         end
           
         x.delete!('0-9[]+')
-        x.to_s == "" ? "m" :x.to_s
+        x.to_s == "" ? "m" : x.to_s
       }
     }.flatten
-    @mix_options = source_mapping.split(",").map { |s| s.split("-").map {|x| x.delete!('0-9a-zA-Z[]'); x.to_s == "" ? "-" :x.to_s} }.flatten    
+    @mix_options = source_mapping.split(",").map { |s| s.split("-").map {|x| x.delete!('0-9a-zA-Z[]'); x.to_s == "" ? "-" : x.to_s} }.flatten
     @sources = @sources_mix.flatten
     
     @samples = source_mapping.split(",").map { |s| s.split("-").map {|x| 

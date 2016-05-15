@@ -2,29 +2,36 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Local File",
-            "type": "Ruby",
+            "name": "Launch",
+            "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/autosiril.rb"
+            "program": "${workspaceRoot}/autosiril.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "externalConsole": false,
+            "sourceMaps": false,
+            "outDir": null
         },
         {
-            "name": "Listen for rdebug-ide",
-            "type": "Ruby",
+            "name": "Attach",
+            "type": "node",
             "request": "attach",
-            "cwd": "${workspaceRoot}",
-            "remoteHost": "127.0.0.1",
-            "remotePort": "1234",
-            "remoteWorkspaceRoot": "${workspaceRoot}"
-        },
-        {
-            "name": "Rails server",
-            "type": "Ruby",
-            "request": "launch",
-            "cwd": "${workspaceRoot}",
-            "program": "${workspaceRoot}/bin/rails",
-            "args": [
-                "server"
-            ]
+            "port": 5858,
+            "address": "localhost",
+            "restart": false,
+            "sourceMaps": false,
+            "outDir": null,
+            "localRoot": "${workspaceRoot}",
+            "remoteRoot": null
         }
     ]
 }
