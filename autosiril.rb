@@ -911,7 +911,8 @@ $set.max_row.times {|row_i|
 
   #replace nils to empty notes
 	cnotes = cnotes.map{|x|
-	  x = x != nil ? x : empty_note.clone
+	  #x = x != nil ? x : empty_note.clone
+    x = nil != x ? x : empty_note.clone
 	}
 #  cnotes[0] = cnotes[0] != nil ? cnotes[0] : empty_note
 #  cnotes[1] = cnotes[1] != nil ? cnotes[1] : empty_note
