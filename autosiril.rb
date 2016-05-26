@@ -168,10 +168,10 @@ class Setup
         end
           
         x.delete!('0-9[]+')
-        x.to_s == "" ? "m" :x.to_s
+        x.to_s == "" ? "m" : x.to_s
       }
     }.flatten
-    @mix_options = source_mapping.split(",").map { |s| s.split("-").map {|x| x.delete!('0-9a-zA-Z[]'); x.to_s == "" ? "-" :x.to_s} }.flatten    
+    @mix_options = source_mapping.split(",").map { |s| s.split("-").map {|x| x.delete!('0-9a-zA-Z[]'); x.to_s == "" ? "-" : x.to_s} }.flatten
     @sources = @sources_mix.flatten
     
     @samples = source_mapping.split(",").map { |s| s.split("-").map {|x| 
@@ -911,7 +911,8 @@ $set.max_row.times {|row_i|
 
   #replace nils to empty notes
 	cnotes = cnotes.map{|x|
-	  x = x != nil ? x : empty_note.clone
+	  #x = x != nil ? x : empty_note.clone
+    x = nil != x ? x : empty_note.clone
 	}
 #  cnotes[0] = cnotes[0] != nil ? cnotes[0] : empty_note
 #  cnotes[1] = cnotes[1] != nil ? cnotes[1] : empty_note
