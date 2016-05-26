@@ -971,7 +971,7 @@ def ornaments2txt(orns)
   return orns_txt
 end
 
-def save_file( out_file, arguments, play_order_txt, orns_txt, patterns, used_patterns ) 
+def save_file( out_file, patterns, used_patterns, play_order_txt, orns_txt, arguments ) 
   txt_file = File.open(out_file,"w")
   txt_file.puts( module_header(arguments, play_order_txt, orns_txt) )
 
@@ -1008,6 +1008,5 @@ text_lines = render_into_text(lmod, $set.max_row)                               
 patterns, used_patterns, play_order_txt = split_into_patterns(text_lines, $set.max_row, $set.pattern_size, $set.skip_lines) #split into unique patterns
 orns_txt = ornaments2txt(orns)
 
-
 #save file:
-save_file( $set.out_file, ARGV[2].to_s, play_order_txt, orns_txt, patterns, used_patterns)
+save_file( $set.out_file, patterns, used_patterns, play_order_txt, orns_txt, ARGV[2].to_s)
