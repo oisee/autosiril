@@ -1,0 +1,14 @@
+{
+  "name": "midi2json",
+  "version": "0.1.0",
+  "description": "midi 2 json converter (for autosiril.js)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "oisee",
+  "license": "ISC",
+  "dependencies": {
+    "midifile": "^1.0.4"
+  }
+}
