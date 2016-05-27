@@ -2,7 +2,7 @@
 VortexTrackerII=0
 Version=3.5
 Title=1d-2me-3p,4m[uf]-5m[2]+,5m[6]-6me[2]+-3p[3]+-2mew+
-Author=oisee/siril^4d 2016.05.27
+Author=oisee/siril^4d 2016.05.28
 NoteTable=4
 ChipFreq=1750000
 Speed=4

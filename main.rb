@@ -211,7 +211,7 @@ class Setup
         puts "track #{track}, num_tracks #{num_tracks}, index #{index}"
       }
     }
-
+    puts "PPQN =#{sequence.ppqn}\n"
     @clocks_per_row = sequence.ppqn.to_f / per_beat.to_f
     @cpr = @clocks_per_row
   end
