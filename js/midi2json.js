@@ -57,9 +57,9 @@ var MIDI2JSON = function (mid) {
     var events = midiFile.getMidiEvents();
     //init state
     var state = {};
-    for (var i = 0; i < 128; i++) {
-        state[i] = [];
-    }
+    //for (var i = 0; i < 128; i++) {
+    //     state[i] = [];
+    //}
 
     var tnotes = [];
     for (var i = 0; i < events.length; i++) {
@@ -68,10 +68,13 @@ var MIDI2JSON = function (mid) {
             //console.log(eve.track, eve.index, eve.type, eve.subtype, eve.playTime, eve.param1, eve.param2 );
             if (eve.subtype == MIDIEvents.EVENT_MIDI_NOTE_ON) {
                 var note = new TNote(eve);
-                state[note.note].push(note);
+                if (typeof state[""+note.note+"/"+note.track+"/"+note.channel] == 'undefined'){
+                    state[""+note.note+"/"+note.track+"/"+note.channel] = [];
+                }
+                state[""+note.note+"/"+note.track+"/"+note.channel].push(note);
             } else if (eve.subtype == MIDIEvents.EVENT_MIDI_NOTE_OFF) {
                 var offnote = new TNote(eve);
-                var note = state[offnote.note].shift();
+                var note = state[""+offnote.note+"/"+offnote.track+"/"+offnote.channel].shift();
                 //note.off = offnote;
                 note.off_time_from_start = offnote.time_from_start
                 note.duration = note.off_time_from_start - note.time_from_start;
@@ -93,13 +96,8 @@ var MIDI2JSON = function (mid) {
         mod.seq[tnote.track].push(note);
     }
 
-    var compareNotes = function (a, b) {
-        if (a.time_from_start < b.time_from_start)
-            return -1;
-        else if (a.time_from_start > b.time_from_start)
-            return 1;
-        else
-            return 0;
+    var compareNotes = function (a, b) {  
+        return (a.time_from_start - b.time_from_start)==0 ? a.note - b.note : a.time_from_start - b.time_from_start;
     }
 
     var seq = [];
@@ -111,7 +109,6 @@ var MIDI2JSON = function (mid) {
         }
     }
     mod.seq = seq;   
-
 
     // console.log("--------------------------");
     // for (var i = 0; i < mod.seq.length; i++) {

@@ -75,7 +75,7 @@ def convert_sequence2mod(seq)
       end
     }
     if ([] != newtrack ) then
-      newtrack = newtrack.sort_by{|k| k["time_from_start"] }
+      newtrack = newtrack.sort_by{|k| [k["time_from_start"], k["note"] ] }
       mod["seq"] << newtrack
     end
   }

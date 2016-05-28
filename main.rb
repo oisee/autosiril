@@ -668,7 +668,7 @@ def json2vmod(seq, set)
     track.each{ |eve|
       if ((defined? eve['note']) && (defined? eve['off'])) then
         #  puts eve.note.to_i
-        vnote = VNote.new(eve['note'], eve['time_from_start'], eve['off']['time_from_start'], 15)  
+        vnote = VNote.new(eve['note'], eve['time_from_start'], eve['off_time_from_start'], 15)  
         vchan << vnote
         #setting maximum row
         set.max_row = [set.max_row , vnote.off, vnote.off+set.per_delay, vnote.off+set.per_delay2].max
