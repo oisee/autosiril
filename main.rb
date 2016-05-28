@@ -1,4 +1,5 @@
 require 'midilib'
+require 'json'
 require_relative "./module_template.rb"
 
 PITCHES = %w(C- C# D- D# E- F- F# G- G# A- A# B-)
@@ -108,7 +109,8 @@ SCALE_PENALTY= [0,1,0,1,0,0,1,0,1,0,1,0]
 #DEFAULT_MIDI_TEST_FILE = './test/envelope0.mid'
 #DEFAULT_MIDI_TEST_FILE = './test/am_dpmpmm0.mid'
 #DEFAULT_MIDI_TEST_FILE = './test/melancholy_hill.mid'
-DEFAULT_MIDI_TEST_FILE = './test/tottoro_example.mid'
+#DEFAULT_MIDI_TEST_FILE = './js/test/tottoro_example.mid'
+DEFAULT_MIDI_TEST_FILE = './js/test/tottoro_example.mid.json'
 
 class Setup 
   # attr_accessor :note, :start, :len, :volume, :sample
@@ -138,7 +140,7 @@ class Setup
   def initialize
     @max_row = 0
     @in_file = ARGV[0]||DEFAULT_MIDI_TEST_FILE
-    @out_file =ARGV[1]|| "" << @in_file << de_text << "e.txt"
+    @out_file =ARGV[1]|| "" << @in_file << "e.txt"
 
     #source_vtracks_txt = ARGV[1]||"0,1,2"
     #@sources = source_vtracks_txt.split(",").map { |s| s.to_i }
@@ -213,6 +215,18 @@ class Setup
     }
     puts "PPQN =#{sequence.ppqn}\n"
     @clocks_per_row = sequence.ppqn.to_f / per_beat.to_f
+    @cpr = @clocks_per_row
+  end
+  
+  def load_sequence_json
+    @sequence = {}
+    # Read the contents of a JSON file into the sequence.
+    seq_json = File.read(@in_file)
+    seq = JSON.parse(seq_json)
+    @sequence = seq 
+    ppqn = sequence["ppqn"]
+    puts "PPQN=#{ppqn}\n"
+    @clocks_per_row = ppqn.to_f / per_beat.to_f
     @cpr = @clocks_per_row
   end
 end
@@ -625,13 +639,36 @@ end
 # main process
 def seq2vmod(seq, set)
   vmod = []
-    seq.each {|track|
-    puts "   track:#{track}"
+  seq.each {|track|
+    #puts "   track:#{track}"
     vchan = []
     track.each{ |eve|
       if ((defined? eve.note) && (defined? eve.off)) then
         #      puts eve.note.to_i
         vnote = VNote.new(eve.note, eve.time_from_start, eve.off.time_from_start, 15)  
+        vchan << vnote
+        #setting maximum row
+        set.max_row = [set.max_row , vnote.off, vnote.off+set.per_delay, vnote.off+set.per_delay2].max
+      end
+    }
+    if ([] != vchan ) then
+      #	  channels << notes
+      vmod << vchan
+      #puts "#{vchan.inspect}"
+    end
+  }
+  return vmod
+end
+
+def json2vmod(seq, set)
+  vmod = []
+    seq.each {|track|
+    #puts "   track:#{track}"
+    vchan = []
+    track.each{ |eve|
+      if ((defined? eve['note']) && (defined? eve['off'])) then
+        #  puts eve.note.to_i
+        vnote = VNote.new(eve['note'], eve['time_from_start'], eve['off']['time_from_start'], 15)  
         vchan << vnote
         #setting maximum row
         set.max_row = [set.max_row , vnote.off, vnote.off+set.per_delay, vnote.off+set.per_delay2].max
@@ -987,10 +1024,18 @@ end
 #start!
 
 $set = Setup.new    #parse all arguments
-$set.load_sequence  #load midi
+
+vmod = []
+if $set.in_file.include?(".json") then
+  $set.load_sequence_json  #load json 
+  vmod = json2vmod($set.sequence["seq"], $set) #puts "max_row:#{$set.max_row}"
+else
+  $set.load_sequence       #load midi
+  vmod = seq2vmod($set.sequence, $set) #puts "max_row:#{$set.max_row}"
+end
 
 #transform midi-sequence into vmod
-vmod = seq2vmod($set.sequence, $set) #puts "max_row:#{$set.max_row}"
+
 
 #transform vmod into rmod (module filled with empty and not empty notes)
 rmod = vmod2rmod(vmod, $set.sources)
