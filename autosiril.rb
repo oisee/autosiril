@@ -562,17 +562,6 @@ def note2drum(note)
 	return note
 end
 
-# show penalties
-puts "penalties: ---{"
-penalties.each {|count|
-  print "#{count} "
-  }
-puts "\penalties: ---}"
-
-if ($set.real_key > 12) then
-  good_key = penalties.index(penalties.min)
-else
-  good_key = $set.real_key % 12
 #start!
 $set = Setup.new
 $set.load_sequence
@@ -666,6 +655,17 @@ puts "\nstatistic: ---}"
   }
 }
 
+# show penalties
+puts "penalties: ---{"
+penalties.each {|count|
+  print "#{count} "
+  }
+puts "\penalties: ---}"
+
+if ($set.real_key > 12) then
+  good_key = penalties.index(penalties.min)
+else
+  good_key = $set.real_key % 12
 end
 
 puts "good_key:#{good_key}"
