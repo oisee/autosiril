@@ -25,21 +25,6 @@ ENV_OFFSETS = [
  -72,-60,-60,-60,-60,-60,-72,-60,-60,-60,-84,-60, #10
 ]
 
-ENV_OFFSETS_old = [
-	24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, #-1
-  24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, #0
-  24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, #1               
-  24, 24, 24, 24, 24, 24, 24, 24, 24, 12, 12, 24, #2
-  12, 12, 12, 12, 12, 12, 12, 12, 12, 00, 00, 24, #3
-  00, 00, 00, 00, 00, 00, 00, 00, 00,-12,-12, 00, #4
-  -7, -7, 00, -7, -1,-12, -1,-12, 00,-14,-19, -1, #5
- -12,-12,-12,-12,-12,-12,-12,-12,-12,-12,-12,-12, #6
- -24,-24,-24,-24,-24,-24,-24,-24,-24,-24,-24,-24, #7
- -36,-36,-36,-36,-36,-36,-36,-36,-36,-36,-36,-36, #8
- -36,-36,-36,-36,-36,-36,-36,-36,-36,-36,-36,-36, #9    
- -36,-36,-36,-36,-36,-36,-36,-36,-36,-36,-36,-36, #10                                                                                                    
-]
-
 ENV_FORMS = [
 	10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, #-1
   10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, #0
@@ -577,6 +562,17 @@ def note2drum(note)
 	return note
 end
 
+# show penalties
+puts "penalties: ---{"
+penalties.each {|count|
+  print "#{count} "
+  }
+puts "\penalties: ---}"
+
+if ($set.real_key > 12) then
+  good_key = penalties.index(penalties.min)
+else
+  good_key = $set.real_key % 12
 #start!
 $set = Setup.new
 $set.load_sequence
@@ -670,17 +666,6 @@ puts "\nstatistic: ---}"
   }
 }
 
-# show penalties
-puts "penalties: ---{"
-penalties.each {|count|
-  print "#{count} "
-  }
-puts "\penalties: ---}"
-
-if ($set.real_key > 12) then
-  good_key = penalties.index(penalties.min)  
-else
-  good_key = $set.real_key % 12
 end
 
 puts "good_key:#{good_key}"
@@ -748,7 +733,7 @@ $set.orn_repeat.times {
   orn <<	0.to_s << ","
 }
 orn[-1] =""
-ornaments [orn] = 0
+ornaments[orn] = 0
 ornament_counter = 1
 
 lmod = []

@@ -652,7 +652,8 @@ def vmod2rmod(vmod, sources)
     puts "vchan:#{vchan_index}"
 
     #fill all "real channel with []"
-    rchan = Array.new($set.max_row+1){[]}
+    #rchan = Array.new($set.max_row+1){[]}
+    rchan = Array.new($set.max_row){[]
     vmod[vchan_index].each {|vnote|
       rchan[vnote.start] << FNote.new(vnote.note, vnote.volume, "s")
       rchan[vnote.off] << FNote.new(vnote.note, vnote.volume, "r")
