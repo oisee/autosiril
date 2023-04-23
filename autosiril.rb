@@ -187,9 +187,7 @@ class Setup
     @pattern_size = (pattern_size == 0)? pattern_size0 : pattern_size
 
     @skip_lines = (ARGV[6]||0).to_i
-
     @orn_repeat = (ARGV[7]||1).to_i
-
     @max_offset = (ARGV[8]||12).to_i
     
     @diatonic_transpose = (ARGV[9]||0).to_i
@@ -533,7 +531,6 @@ def flat_cell_drum(cell)
   end
   return ncell
 end
-
 
 def squize_ornament(base_note, orn)
   sorted = orn.sort
@@ -957,7 +954,7 @@ $set.max_row.times {|row_i|
 }
 
 #define pattern number
-patterns = ($set.max_row % $set.pattern_size) == 0? ($set.max_row / $set.pattern_size):($set.max_row / $set.pattern_size) + 1
+patterns = ($set.max_row % $set.pattern_size) == 0? ($set.max_row / $set.pattern_size + 1):($set.max_row / $set.pattern_size)
 
 hashed_patterns = {}
 
@@ -989,6 +986,7 @@ patterns.times {|i|
     hashed_patterns[pattern_text] = i
     wet_patterns << pattern_text
     wet_play_order << i
+    #puts(pattern_text)
   else
     use_patterns[i] = false
 
@@ -1032,6 +1030,13 @@ wet_patterns.each_with_index {|pattern_text,i|
   end
 }
 
+#puts(ARGV)
+ARGV.each_with_index do |element, index|
+  puts "Index: #{index} - Element: #{element}"
+end
+
+puts "Skip Lines:", $set.skip_lines
+puts "Pattern Size:", $set.pattern_size
 #cell.each_with_index {|note,note_i|
 #  p_orn[] << note.note
 #}

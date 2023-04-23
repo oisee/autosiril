@@ -18,8 +18,8 @@ ruby autosiril.rb imrav.mid 2me[2f]-6p[3]+,3m[1e]-7m[6d]-6p[3]+-2mew+,4m[3c]-5m[
 * N1 - Lines per one beat (or per one quarter of a bar). Four by default, which means that a pattern of 64 lines will consist of 4 bars; they will, in turn, have 16 lines each.
 * N2 - Primary echo delay (put in lines). Three by default.
 * N3 - Secondary echo delay (put in lines). Six by default.
-* N4 - Delay before the MIDI's actual start (put in lines). Zero by default. Use this feature whenever your MIDI module starts with silence before the song begins to play.
-* N5 - Length of one pattern (in lines). 64 by default, no more than 255 can be used.
+* N4 - Length of one pattern (in lines). 64 by default, no more than 255 can be used.
+* N5 - Delay before the MIDI's actual start (put in lines). Zero by default. Use this feature whenever your MIDI module starts with silence before the song begins to play.
 * N6 - The ornament's positions per one chord note, which means that if you put two positions, one chord note will consume two frames in the ornament. One or two by default.
 * N7 - The number of semitones from the mediant chord note. That will define the chord's "lenght", which will be used for turning it into the ornament. In case if the number of ornaments in the converted song exceeds 15, it's time to put a smaller number into this option or restructure the chords in the MIDI track manually.
 
