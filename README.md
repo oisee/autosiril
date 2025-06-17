@@ -4,12 +4,15 @@ Autosiril is a Ruby tool that converts MIDI files to text format for Vortex Trac
 
 ## Files Overview
 
-- **`autosiril.rb`** - Main working converter script (stable version - **USE THIS**)
-- **`main.rb`** - Refactored version (work in progress, reverted due to issues)
+- **`autosiril.rb`** - Original working converter script (stable, monolithic)
+- **`autosiril_refactored.rb`** - **NEW** Clean, modular refactored version (recommended for development)
+- **`main.rb`** - Old refactoring attempt (work in progress, reverted due to issues)
 - **`module_template.rb`** - VTI module header template with predefined samples
 - **`test/`** - Test MIDI files and shell scripts for testing conversions
 
-> ⚠️ **Important**: Always use `autosiril.rb` - it's the stable, working version. The `main.rb` file is a refactoring attempt that was reverted due to functionality issues.
+> ✅ **Recommended**: Use `autosiril_refactored.rb` for new development - it's clean, well-documented, and functionally equivalent to the original.
+> 
+> ⚠️ **Legacy**: `autosiril.rb` remains the proven stable version. `main.rb` is an old broken refactoring attempt.
 
 ## Requirements
 
@@ -319,6 +322,43 @@ For `[SO]` sample/ornament assignments:
 A = 10  B = 11  C = 12  D = 13  E = 14  F = 15  G = 16  H = 17  I = 18  J = 19
 K = 20  L = 21  M = 22  N = 23  O = 24  P = 25  Q = 26  R = 27  S = 28  T = 29
 U = 30  V = 31
+```
+
+## Refactored Version Architecture
+
+The `autosiril_refactored.rb` provides a clean, modular implementation with the following improvements:
+
+### **Object-Oriented Design**
+- **`AutosirilConverter`** - Main orchestrator class
+- **`AutosirilConfig`** - Configuration and argument parsing
+- **`MidiProcessor`** - MIDI file loading and note extraction
+- **`KeyProcessor`** - Musical key detection and transposition
+- **`PolyphonicProcessor`** - Polyphonic/monophonic note flattening
+- **`OrnamentGenerator`** - Chord-to-ornament conversion
+- **`EchoProcessor`** - Delay and echo effects
+- **`ChannelMixer`** - Multi-channel mixing to AY channels
+- **`VortexOutputGenerator`** - VortexTracker format generation
+
+### **Data Structures**
+- **`VirtualNote`** - MIDI note with tracker timing
+- **`TimelineNote`** - Timeline grid note with state (start/continue/release)
+- **`VortexNote`** - Final note with all VT parameters
+
+### **Key Features**
+- ✅ **Identical output** to original (functionally equivalent)
+- ✅ **Comprehensive documentation** with inline comments
+- ✅ **Modular architecture** - easy to understand and modify
+- ✅ **Constants organized** in `AutosirilConstants` module
+- ✅ **Proper error handling** and validation
+- ✅ **Clean separation of concerns** - each class has single responsibility
+
+### **Usage**
+```bash
+# Use exactly like the original
+ruby autosiril_refactored.rb input.mid "1d-2me,3p,4m" 4 3 6 64 0 1 12
+
+# Enable debug output
+DEBUG=1 ruby autosiril_refactored.rb input.mid "1d-2me,3p,4m" 4 3 6 64 0 1 12
 ```
 
 ## Comprehensive Reimplementation Guide
