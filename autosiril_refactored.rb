@@ -241,7 +241,7 @@ class VortexNote
 
   def envelope_note_display
     return '....' unless envelope_active?
-    "#{AutosirilConstants::PITCHES[@envelope_pitch]}#{@envelope_octave}"
+    " #{AutosirilConstants::PITCHES[@envelope_pitch]}#{@envelope_octave}"
   end
 
   def envelope_active?
