@@ -1047,7 +1047,7 @@ class VortexOutputGenerator
   end
 
   def format_envelope_display(envelope_note)
-    envelope_note.envelope_active? ? "#{envelope_note.envelope_note_display} " : '....'
+    envelope_note.envelope_active? ? envelope_note.envelope_note_display : '....'
   end
 
   def format_note_display(note)
