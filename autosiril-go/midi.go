@@ -56,18 +56,18 @@ func (mp *MidiProcessor) LoadMIDI() ([]*VirtualNote, int, error) {
 			if event.Message.GetNoteOn(&channel, &key, &velocity) {
 				if velocity > 0 {
 					// Note on
-					trackerRow := (currentTime/clocksPerRow + 1/2) // Round to nearest
+					trackerRow := int(float64(currentTime)/float64(clocksPerRow) + 0.5) // Round to nearest like Ruby
 					note := &VirtualNote{
 						Note:    int(key),
-						Volume:  int(velocity),
+						Volume:  15, // Ruby always uses 15, ignoring velocity
 						Start:   trackerRow,
-						Channel: trackIdx, // Use track index as channel
+						Channel: trackIdx, // Use track index like Ruby, not MIDI channel!
 					}
 					activeNotes[int(key)] = note
 				} else {
 					// Note on with velocity 0 = note off
 					if activeNote, exists := activeNotes[int(key)]; exists {
-						trackerRow := (currentTime/clocksPerRow + 1/2)
+						trackerRow := int(float64(currentTime)/float64(clocksPerRow) + 0.5)
 						activeNote.Off = trackerRow
 						activeNote.Length = activeNote.Off - activeNote.Start
 						if activeNote.Length > 0 {
@@ -82,7 +82,7 @@ func (mp *MidiProcessor) LoadMIDI() ([]*VirtualNote, int, error) {
 			} else if event.Message.GetNoteOff(&channel, &key, &velocity) {
 				// Note off
 				if activeNote, exists := activeNotes[int(key)]; exists {
-					trackerRow := (currentTime/clocksPerRow + 1/2)
+					trackerRow := int(float64(currentTime)/float64(clocksPerRow) + 0.5)
 					activeNote.Off = trackerRow
 					activeNote.Length = activeNote.Off - activeNote.Start
 					if activeNote.Length > 0 {
@@ -98,7 +98,7 @@ func (mp *MidiProcessor) LoadMIDI() ([]*VirtualNote, int, error) {
 
 		// Handle any remaining active notes at end of track
 		for _, activeNote := range activeNotes {
-			activeNote.Off = currentTime / clocksPerRow
+			activeNote.Off = int(float64(currentTime)/float64(clocksPerRow) + 0.5)
 			activeNote.Length = activeNote.Off - activeNote.Start
 			if activeNote.Length > 0 {
 				virtualNotes = append(virtualNotes, activeNote)

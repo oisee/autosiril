@@ -52,7 +52,7 @@ func (pp *PolyphonicProcessor) FlattenNotes(virtualNotes []*VirtualNote, maxRow 
 			continue // Skip unmapped channels
 		}
 		
-		fmt.Printf("rchan:%d\n", virtualChannel)
+		fmt.Printf("rchan:%d note:%d->%s%d\n", virtualChannel, vNote.Note, Pitches[vNote.Note%12], vNote.Note/12-1)
 		
 		start := vNote.Start + pp.config.SkipLines
 		end := vNote.Off + pp.config.SkipLines

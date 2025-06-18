@@ -14,6 +14,11 @@ func main() {
 	fmt.Printf("chan_settings: %v\n", strings.Split(config.ChannelMapping, ","))
 	fmt.Println("Starting MIDI to VortexTracker conversion...")
 	
+	// Debug MIDI structure
+	if err := DebugMIDI(config.InputFile); err != nil {
+		fmt.Printf("Debug error: %v\n", err)
+	}
+	
 	// Parse channel mapping
 	channelSettings, err := parseChannelMapping(config.ChannelMapping)
 	if err != nil {
