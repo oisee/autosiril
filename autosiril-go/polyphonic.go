@@ -18,7 +18,7 @@ func NewPolyphonicProcessor(config *AutosirilConfig) *PolyphonicProcessor {
 func (pp *PolyphonicProcessor) FlattenNotes(virtualNotes []*VirtualNote, maxRow int, channelSettings [][]ChannelSettings) ([][]*TimelineNote, error) {
 	fmt.Println("--- flattening polynotes ---")
 	
-	// Initialize timeline grids for each virtual channel
+	// Calculate total number of virtual channels (each channel setting gets its own virtual channel)
 	numVirtualChannels := 0
 	for _, ayChannel := range channelSettings {
 		numVirtualChannels += len(ayChannel)
@@ -33,45 +33,46 @@ func (pp *PolyphonicProcessor) FlattenNotes(virtualNotes []*VirtualNote, maxRow 
 		}
 	}
 	
-	// Group notes by virtual channel based on MIDI channel mapping
-	virtualChannelMap := make(map[int]int) // MIDI channel -> virtual channel index
+	// Create mapping from channel settings to virtual channel index (like Ruby's abs_index)
 	vChanIndex := 0
 	
 	for ayIdx, ayChannel := range channelSettings {
 		fmt.Printf("vchan:%d\n", ayIdx)
-		for _, chanSetting := range ayChannel {
-			virtualChannelMap[chanSetting.MIDIChannel] = vChanIndex
+		for range ayChannel {
+			// Each channel setting gets its own virtual channel, even if it references the same MIDI track
 			vChanIndex++
 		}
 	}
 	
-	// Process each virtual note
-	for _, vNote := range virtualNotes {
-		virtualChannel, exists := virtualChannelMap[vNote.Channel]
-		if !exists {
-			continue // Skip unmapped channels
-		}
-		
-		fmt.Printf("rchan:%d note:%d->%s%d\n", virtualChannel, vNote.Note, Pitches[vNote.Note%12], vNote.Note/12-1)
-		
-		start := vNote.Start + pp.config.SkipLines
-		end := vNote.Off + pp.config.SkipLines
-		
-		if start < 0 || start >= len(timelines[virtualChannel]) {
-			continue
-		}
-		
-		// Handle monophonic vs polyphonic processing
-		channelSetting := pp.getChannelSetting(vNote.Channel, channelSettings)
-		if channelSetting == nil {
-			continue
-		}
-		
-		switch channelSetting.InstrumentType {
-		case "m", "d", "e": // Monophonic
-			pp.processMonophonicNote(timelines[virtualChannel], vNote, start, end, channelSetting)
-		case "p": // Polyphonic  
-			pp.processPolyphonicNote(timelines[virtualChannel], vNote, start, end, channelSetting)
+	// Process notes for each channel setting separately (this allows track duplication)
+	vChanIndex = 0
+	for ayIdx, ayChannel := range channelSettings {
+		for settingIdx, chanSetting := range ayChannel {
+			fmt.Printf("Processing AY channel %d, setting %d, MIDI track %d -> virtual channel %d\n", ayIdx, settingIdx, chanSetting.MIDIChannel, vChanIndex)
+			
+			// Process all virtual notes that match this MIDI track
+			for _, vNote := range virtualNotes {
+				if vNote.Channel != chanSetting.MIDIChannel {
+					continue // Skip notes not from this MIDI track
+				}
+				
+				fmt.Printf("rchan:%d note:%d->%s%d\n", vChanIndex, vNote.Note, Pitches[vNote.Note%12], vNote.Note/12-1)
+				
+				start := vNote.Start + pp.config.SkipLines
+				end := vNote.Off + pp.config.SkipLines
+				
+				if start < 0 || start >= len(timelines[vChanIndex]) {
+					continue
+				}
+				
+				switch chanSetting.InstrumentType {
+				case "m", "d", "e": // Monophonic
+					pp.processMonophonicNote(timelines[vChanIndex], vNote, start, end, &chanSetting)
+				case "p": // Polyphonic  
+					pp.processPolyphonicNote(timelines[vChanIndex], vNote, start, end, &chanSetting)
+				}
+			}
+			vChanIndex++
 		}
 	}
 	
