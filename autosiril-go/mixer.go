@@ -75,6 +75,14 @@ func (cm *ChannelMixer) applyInstrumentSettings(note *VortexNote, setting *Chann
 		if note.Note < len(Note2DrumSample) {
 			note.Sample = Note2DrumSample[note.Note]
 			note.Note = Note2DrumNote[note.Note]
+			
+			// Recalculate pitch and octave based on new drum note (Ruby-compatible)
+			note.Pitch = note.Note % 12
+			note.Octave = note.Note / 12  // Ruby appears to use direct MIDI octave for drums
+			if note.Octave > 8 {
+				note.Octave = 8
+			}
+			
 		}
 		note.Envelope = 15
 		

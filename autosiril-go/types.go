@@ -122,8 +122,8 @@ func NewVortexNote(timelineNote *TimelineNote) *VortexNote {
 		Ornament:       0,
 	}
 	
-	// Calculate envelope pitch and octave
-	if vn.Note >= 0 && vn.Note < len(EnvOffsets) {
+	// Calculate envelope pitch and octave only for actual notes (not empty notes)
+	if vn.Type != "." && vn.Note >= 0 && vn.Note < len(EnvOffsets) {
 		envelopeNote := vn.Note + EnvOffsets[vn.Note]
 		vn.EnvelopePitch = envelopeNote % 12
 		vn.EnvelopeOctave = vn.noteToOctave(envelopeNote)

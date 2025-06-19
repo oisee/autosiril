@@ -132,18 +132,26 @@ func (pp *PolyphonicProcessor) getChannelSetting(midiChannel int, channelSetting
 }
 
 func (pp *PolyphonicProcessor) processMonophonicNote(timeline []*TimelineNote, vNote *VirtualNote, start, end int, setting *ChannelSettings) {
-	// For monophonic, take highest note if there's a conflict
+	// Ruby-compatible monophonic processing: collect all notes per time slot, then apply flat_cell_mono logic
 	for pos := start; pos < end && pos < len(timeline); pos++ {
 		if pos == start {
-			// Note start
-			if timeline[pos].Type == "." || vNote.Note > timeline[pos].Note {
+			// Note start - compete with existing notes for this slot
+			if timeline[pos].Type == "." {
+				// Empty slot - place our note
+				timeline[pos] = NewTimelineNote(vNote.Note, vNote.Volume, "s")
+				timeline[pos].InstrumentKind = setting.InstrumentType
+				timeline[pos].Channel = vNote.Channel
+				timeline[pos].Settings = vNote.Settings
+			} else if timeline[pos].Type == "s" && vNote.Note > timeline[pos].Note {
+				// Existing start note - take highest note (Ruby's cell.max behavior)
 				timeline[pos] = NewTimelineNote(vNote.Note, vNote.Volume, "s")
 				timeline[pos].InstrumentKind = setting.InstrumentType
 				timeline[pos].Channel = vNote.Channel
 				timeline[pos].Settings = vNote.Settings
 			}
+			// If there's already a higher note, don't place this one
 		} else if pos == end-1 {
-			// Note release
+			// Note release - only place if slot is empty (Ruby logic)
 			if timeline[pos].Type == "." {
 				timeline[pos] = NewTimelineNote(vNote.Note, vNote.Volume, "r")
 				timeline[pos].InstrumentKind = setting.InstrumentType
@@ -151,13 +159,9 @@ func (pp *PolyphonicProcessor) processMonophonicNote(timeline []*TimelineNote, v
 				timeline[pos].Settings = vNote.Settings
 			}
 		} else {
-			// Note continue
-			if timeline[pos].Type == "." {
-				timeline[pos] = NewTimelineNote(vNote.Note, vNote.Volume, "c")
-				timeline[pos].InstrumentKind = setting.InstrumentType
-				timeline[pos].Channel = vNote.Channel
-				timeline[pos].Settings = vNote.Settings
-			}
+			// Note continue - Ruby shows NOTHING for continues in monophonic mode
+			// Don't place continue notes - leave as empty ("." type)
+			// This matches Ruby's flat_cell_mono logic where 'c' returns []
 		}
 	}
 }

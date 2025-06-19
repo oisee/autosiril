@@ -93,8 +93,8 @@ var Note2DrumSample = []int{
 	10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, // -1
 	10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, // 0
 	10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, // 1
-	// Octave 2: Full drum kit mapping
-	10, 27, 12, 11, 31, 9, 19, 9, 21, 9, 27, 9, // 2
+	// Octave 2: Full drum kit mapping (adjusted to match Ruby output)
+	10, 27, 12, 11, 31, 9, 10, 9, 21, 9, 27, 9, // 2
 	// Octave 3: Hihat-focused mapping
 	21, 21, 21, 21, 21, 21, 21, 21, 21, 19, 21, 21, // 3
 	// Octaves 4-10: Default to hihat2
@@ -113,8 +113,8 @@ var Note2DrumNote = []int{
 	60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, // -1
 	60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, // 0
 	60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, // 1
-	// Octave 2: Specific drum note mappings
-	60, 60, 60, 60, 78, 48, 119, 60, 60, 60, 48, 63, // 2
+	// Octave 2: Specific drum note mappings (adjusted to match Ruby output)
+	60, 60, 60, 60, 78, 48, 48, 60, 60, 60, 48, 63, // 2
 	// Octave 3: Hihat focused
 	60, 60, 60, 60, 60, 60, 60, 60, 60, 119, 60, 60, // 3
 	// Octaves 4-10: Default to 60
