@@ -27,6 +27,7 @@ func main() {
 	}
 	
 	
+	
 	// Load MIDI
 	midiProcessor := NewMidiProcessor(config)
 	virtualNotes, maxRow, err := midiProcessor.LoadMIDI()
@@ -129,7 +130,8 @@ func parseChannelSetting(setting string) (ChannelSettings, error) {
 		result.MIDIChannel = result.MIDIChannel*10 + int(setting[i]-'0')
 		i++
 	}
-	result.MIDIChannel-- // Convert to 0-based indexing
+	// Channel numbers in mapping are 1-based, keep them as-is since MIDI tracks are numbered starting from 0
+	// but mapping "1p" should use track 1, "2m" should use track 2, etc.
 	
 	// Extract instrument type and modifiers
 	if i < len(setting) {

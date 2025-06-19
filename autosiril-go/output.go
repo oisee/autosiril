@@ -66,7 +66,7 @@ func (vog *VortexOutputGenerator) writeModuleHeader(output *strings.Builder, cha
 func (vog *VortexOutputGenerator) writeOrnaments(output *strings.Builder, ornaments []Ornament) {
 	for _, ornament := range ornaments {
 		output.WriteString(fmt.Sprintf("[Ornament%d]\n", ornament.ID))
-		output.WriteString("L")
+		output.WriteString("L0")
 		for _, value := range ornament.Pattern {
 			output.WriteString(fmt.Sprintf(",%d", value))
 		}
@@ -75,21 +75,44 @@ func (vog *VortexOutputGenerator) writeOrnaments(output *strings.Builder, orname
 }
 
 func (vog *VortexOutputGenerator) writeSamples(output *strings.Builder) {
-	// Use predefined samples that match the expected output
+	// Use complete sample definitions that match Ruby module_template.rb exactly
 	samples := []string{
 		"[Sample1]\nTnE +000_ +00_ F_\nTnE +000_ +00_ F_\nTnE +000_ +00_ F_\nTnE +000_ +00_ D_\nTnE +000_ +00_ B_\nTnE +000_ +00_ B_ L\n",
 		"[Sample2]\nTnE +000_ +00_ F_ L\n",
 		"[Sample3]\nTnE +001_ +00_ F_\nTnE +002_ +00_ F_\nTnE +001_ +00_ E_\nTnE +002_ +00_ E_\nTnE +000_ +00_ E_ L\nTnE -001_ +00_ E_\nTnE -002_ +00_ E_\nTnE -001_ +00_ E_\nTnE +000_ +00_ E_\nTnE +001_ +00_ E_\nTnE +002_ +00_ E_\nTnE +001_ +00_ E_\n",
+		"[Sample4]\nTnE +002_ +00_ D_\nTnE +002_ +00_ D_\nTnE +002_ +00_ C_\nTnE +002_ +00_ B_\nTnE +002_ +00_ A_ L\nTnE +002_ +00_ A_\nTnE +002_ +00_ A_\nTnE +002_ +00_ A_\nTnE +002_ +00_ A_\nTnE +002_ +00_ A_\nTnE +002_ +00_ A_\nTnE +002_ +00_ A_\n",
+		"[Sample5]\nTnE +000_ +00_ F_\nTnE +000_ +00_ F_\ntne +000_ +00_ 0_ L\n",
+		"[Sample6]\nTnE -001_ +00_ F_ L\n",
+		"[Sample7]\nTnE +006_ +00_ F_ L\n",
+		"[Sample8]\ntNe +000_ +00_ F_\ntNe +000_ +00_ B_\ntNe +000_ +00_ 7_\ntNe +000_ +00_ 6- L\n",
+		"[Sample9]\nTnE +080_ +00_ F_\nTnE +100_ +00_ E_\nTnE +180_ +00_ E_\nTnE +200_ +00_ E_\nTnE +240_ +00_ D_\nTnE +280_ +00_ D_\nTnE +2C0_ +00_ D_\nTnE +300_ +00_ C_\nTnE +300_ +00_ C_\nTnE +340_ +00_ C_\nTnE +340_ +00_ C_\nTnE +380_ +00_ B_\nTnE +380_ +00_ B_\nTnE +400_ +00_ B_\nTnE +400_ +00_ B_\nTnE +480_ +00_ A_\nTnE +500_ +00_ 9_\nTnE +580_ +00_ 7_\nTnE +600_ +00_ 4_\nTnE +680_ +00_ 1_\nTnE +000_ +00_ 0_ L\n",
+		"[Sample10]\nTne +1C0_ +00_ F_\nTne +280_ +00_ E_\nTne +380_ +00_ C_\nTne +440_ +00_ A_\nTne +480_ +00_ 8_\nTnE +000_ +00_ 0_ L\n",
+		"[Sample11]\nTNe +200_ -0A_ F_\ntNe +000_ +0F_ A_\nTNe +200_ -07_ E_\ntNe +000_ +0E_ B- L\n",
+		"[Sample12]\nTNE +0A0_ +05_ F_\nTNE +140_ +02_ D_\nTNE +140_ +02_ B_\nTNE +100_ +00_ A_ L\nTNE +140_ +00_ A_\nTNE +200_ +00_ A-\n",
+		"[Sample13]\nTne +200_ +00_ F_\nTne +2C0_ +00_ F_\nTne +380_ +00_ E_\nTne +500_ +00_ C_\nTne +520_ +00_ 9_\ntne +000_ +00_ 0_ L\n",
+		"[Sample14]\nTNE -100_ +00_ F_\nTNE -100_ +00_ D_\nTNE -100_ +00_ A_\nTNE -100_ +00_ 5_\ntne +000_ +00_ 0_ L\n",
+		"[Sample15]\nTNE -100_ +00_ 5_\nTNE -100_ +00_ 8_\nTNE -100_ +00_ B_\nTNE -100_ +00_ F_\nTNe -100_ +00_ 9- L\n",
+		"[Sample16]\nTnE +000_ +00_ C_\nTnE +000_ +00_ E_\nTnE +000_ +00_ F_\nTnE +000_ +00_ F_\nTnE +000_ +00_ E_\nTnE +000_ +00_ D_\nTnE +000_ +00_ C_\nTnE +000_ +00_ C_ L\nTnE +001_ +00_ C_\nTnE +002_ +00_ C_\nTnE +003_ +00_ C_\nTnE +001_ +00_ C_\nTnE +000_ +00_ C_\nTnE -001_ +00_ C_\nTnE -002_ +00_ C_\nTnE -003_ +00_ C_\nTnE -001_ +00_ C_\nTnE +000_ +00_ C_\nTnE +000_ +00_ C_\n",
+		"[Sample17]\nTne +1C0_ +00_ F_\nTne +280_ +00_ D_\nTne +380_ +00_ 7_\nTNE +000_ +00_ 0_ L\n",
+		"[Sample18]\nTnE -00C_ +00_ 0_ L\n",
+		"[Sample19]\nTNe +000_ +00_ F_\nTNe +000_ +00_ C_\nTNe +000_ +00_ 6_\nTNe +000_ +01_ A- L\n",
+		"[Sample20]\nTNE +140_ +00_ F_\ntNE +000_ +00_ B- L\n",
+		"[Sample21]\ntNE +000_ +00_ D_\ntNE +000_ +00_ 8_\ntNE +000_ +00_ 1_\nTNE +000_ +00_ 0_ L\n",
+		"[Sample22]\nTnE +000_ +00_ D_ L\nTnE +000_ +00_ D_\ntne +000_ +00_ 9_\ntne +000_ +00_ 9_\nTnE +000_ +00_ D_\nTnE +000_ +00_ D_\ntne +000_ +00_ 9_\ntne +000_ +00_ 9_\nTnE +000_ +00_ D_\nTnE +000_ +00_ D_\nTnE +000_ +00_ D_\nTnE +000_ +00_ D_\nTnE +000_ +00_ D_\nTnE +000_ +00_ D_\ntne +000_ +00_ 9_\ntne +000_ +00_ 9_\n",
+		"[Sample23]\nTnE +000_ +00_ F_ L\nTnE +010_ +01_ F_\nTnE +010_ +01_ F_\nTnE +010_ +01_ F_\nTnE +010_ +01_ F_\nTnE +000_ +00_ F_\nTnE +000_ +00_ F_\nTnE -010_ -01_ F_\nTnE -010_ -01_ F_\nTnE -010_ -01_ F_\nTnE -010_ -01_ F_\nTnE +000_ +00_ F_\n",
+		"[Sample24]\nTNe +000_ -01_ C_\nTNe +000_ -01_ D_\nTNe +000_ -01_ E_\nTNe +000_ -01_ F_\nTNe +000_ -01_ F_\nTNe +000_ -01_ F_\nTNe +000_ -01_ F_\nTNe +000_ -01_ F_\nTNe +000_ -01_ E_\nTNe +000_ -01_ E_\nTNe +000_ -01_ E_\nTNe +000_ -01_ F_\nTNe +000_ -01_ F_ L\n",
+		"[Sample25]\nTNE +000_ +00_ F_\nTNE +000_ +00_ F_ L\nTNE +000_ +00_ F_\nTNE +000_ +00_ F_\nTNE +000_ +00_ F-\n",
+		"[Sample26]\ntne +000_ +00_ 0_ L\n",
+		"[Sample27]\nTnE +100_ +05_ F_\nTnE +200_ +02_ A_\nTnE +300_ +02_ 7_\nTNE +400_ +00_ 3- L\n",
+		"[Sample28]\ntne +000_ +00_ 0_ L\n",
+		"[Sample29]\ntnE +000_ +00_ 0_ L\n",
+		"[Sample30]\nTNE +000_ +00_ C+ L\n",
+		"[Sample31]\nTNe +1C0_ +00_ F_\nTne +280_ +00_ E_\nTne +380_ +00_ C_\nTne +440_ +00_ A_\nTne +480_ +00_ 8_\nTnE +000_ +00_ 0_ L\n",
 	}
 	
 	for _, sample := range samples {
 		output.WriteString(sample)
 		output.WriteString("\n")
-	}
-	
-	// Write remaining samples (simplified)
-	for i := 4; i <= 31; i++ {
-		output.WriteString(fmt.Sprintf("[Sample%d]\nTnE +000_ +00_ F_ L\n\n", i))
 	}
 }
 

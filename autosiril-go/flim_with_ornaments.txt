@@ -1,0 +1,1570 @@
+chan_settings: [5du-4du+-3du+ 1p 2m]
+Starting MIDI to VortexTracker conversion...
+MIDI File: ../test/flim.mid
+Format: 4981920
+Number of tracks: 6
+Time format: 480 MetricTicks
+
+Track 0: 5 events, 0 notes
+
+Track 1: 300 events, 147 notes
+  Channel 0: 147 notes
+
+Track 2: 262 events, 128 notes
+  Channel 0: 128 notes
+
+Track 3: 133 events, 64 notes
+  Channel 9: 64 notes
+
+Track 4: 901 events, 448 notes
+  Channel 9: 448 notes
+
+Track 5: 759 events, 377 notes
+  Channel 9: 377 notes
+AY Channel 0:
+  Setting 0: MIDI track 5, type d
+  Setting 1: MIDI track 4, type d
+  Setting 2: MIDI track 3, type d
+AY Channel 1:
+  Setting 0: MIDI track 1, type p
+AY Channel 2:
+  Setting 0: MIDI track 2, type m
+track , num_tracks 6, index 0
+track , num_tracks 6, index 1
+track , num_tracks 6, index 2
+track , num_tracks 6, index 3
+track , num_tracks 6, index 4
+track , num_tracks 6, index 5
+max_row:1662
+--- detecting base note (for major)---
+detected key: 3 (D# major)
+--- flattening polynotes ---
+vchan:0
+vchan:1
+vchan:2
+  Processing note 1 for track 5 with instrument type 'd'
+  Processing note 2 for track 5 with instrument type 'd'
+  Processing note 3 for track 5 with instrument type 'd'
+  Processing note 4 for track 5 with instrument type 'd'
+  Processing note 5 for track 5 with instrument type 'd'
+  Processing note 6 for track 5 with instrument type 'd'
+  Processing note 7 for track 5 with instrument type 'd'
+  Processing note 8 for track 5 with instrument type 'd'
+  Processing note 9 for track 5 with instrument type 'd'
+  Processing note 10 for track 5 with instrument type 'd'
+  Processing note 11 for track 5 with instrument type 'd'
+  Processing note 12 for track 5 with instrument type 'd'
+  Processing note 13 for track 5 with instrument type 'd'
+  Processing note 14 for track 5 with instrument type 'd'
+  Processing note 15 for track 5 with instrument type 'd'
+  Processing note 16 for track 5 with instrument type 'd'
+  Processing note 17 for track 5 with instrument type 'd'
+  Processing note 18 for track 5 with instrument type 'd'
+  Processing note 19 for track 5 with instrument type 'd'
+  Processing note 20 for track 5 with instrument type 'd'
+  Processing note 21 for track 5 with instrument type 'd'
+  Processing note 22 for track 5 with instrument type 'd'
+  Processing note 23 for track 5 with instrument type 'd'
+  Processing note 24 for track 5 with instrument type 'd'
+  Processing note 25 for track 5 with instrument type 'd'
+  Processing note 26 for track 5 with instrument type 'd'
+  Processing note 27 for track 5 with instrument type 'd'
+  Processing note 28 for track 5 with instrument type 'd'
+  Processing note 29 for track 5 with instrument type 'd'
+  Processing note 30 for track 5 with instrument type 'd'
+  Processing note 31 for track 5 with instrument type 'd'
+  Processing note 32 for track 5 with instrument type 'd'
+  Processing note 33 for track 5 with instrument type 'd'
+  Processing note 34 for track 5 with instrument type 'd'
+  Processing note 35 for track 5 with instrument type 'd'
+  Processing note 36 for track 5 with instrument type 'd'
+  Processing note 37 for track 5 with instrument type 'd'
+  Processing note 38 for track 5 with instrument type 'd'
+  Processing note 39 for track 5 with instrument type 'd'
+  Processing note 40 for track 5 with instrument type 'd'
+  Processing note 41 for track 5 with instrument type 'd'
+  Processing note 42 for track 5 with instrument type 'd'
+  Processing note 43 for track 5 with instrument type 'd'
+  Processing note 44 for track 5 with instrument type 'd'
+  Processing note 45 for track 5 with instrument type 'd'
+  Processing note 46 for track 5 with instrument type 'd'
+  Processing note 47 for track 5 with instrument type 'd'
+  Processing note 48 for track 5 with instrument type 'd'
+  Processing note 49 for track 5 with instrument type 'd'
+  Processing note 50 for track 5 with instrument type 'd'
+  Processing note 51 for track 5 with instrument type 'd'
+  Processing note 52 for track 5 with instrument type 'd'
+  Processing note 53 for track 5 with instrument type 'd'
+  Processing note 54 for track 5 with instrument type 'd'
+  Processing note 55 for track 5 with instrument type 'd'
+  Processing note 56 for track 5 with instrument type 'd'
+  Processing note 57 for track 5 with instrument type 'd'
+  Processing note 58 for track 5 with instrument type 'd'
+  Processing note 59 for track 5 with instrument type 'd'
+  Processing note 60 for track 5 with instrument type 'd'
+  Processing note 61 for track 5 with instrument type 'd'
+  Processing note 62 for track 5 with instrument type 'd'
+  Processing note 63 for track 5 with instrument type 'd'
+  Processing note 64 for track 5 with instrument type 'd'
+  Processing note 65 for track 5 with instrument type 'd'
+  Processing note 66 for track 5 with instrument type 'd'
+  Processing note 67 for track 5 with instrument type 'd'
+  Processing note 68 for track 5 with instrument type 'd'
+  Processing note 69 for track 5 with instrument type 'd'
+  Processing note 70 for track 5 with instrument type 'd'
+  Processing note 71 for track 5 with instrument type 'd'
+  Processing note 72 for track 5 with instrument type 'd'
+  Processing note 73 for track 5 with instrument type 'd'
+  Processing note 74 for track 5 with instrument type 'd'
+  Processing note 75 for track 5 with instrument type 'd'
+  Processing note 76 for track 5 with instrument type 'd'
+  Processing note 77 for track 5 with instrument type 'd'
+  Processing note 78 for track 5 with instrument type 'd'
+  Processing note 79 for track 5 with instrument type 'd'
+  Processing note 80 for track 5 with instrument type 'd'
+  Processing note 81 for track 5 with instrument type 'd'
+  Processing note 82 for track 5 with instrument type 'd'
+  Processing note 83 for track 5 with instrument type 'd'
+  Processing note 84 for track 5 with instrument type 'd'
+  Processing note 85 for track 5 with instrument type 'd'
+  Processing note 86 for track 5 with instrument type 'd'
+  Processing note 87 for track 5 with instrument type 'd'
+  Processing note 88 for track 5 with instrument type 'd'
+  Processing note 89 for track 5 with instrument type 'd'
+  Processing note 90 for track 5 with instrument type 'd'
+  Processing note 91 for track 5 with instrument type 'd'
+  Processing note 92 for track 5 with instrument type 'd'
+  Processing note 93 for track 5 with instrument type 'd'
+  Processing note 94 for track 5 with instrument type 'd'
+  Processing note 95 for track 5 with instrument type 'd'
+  Processing note 96 for track 5 with instrument type 'd'
+  Processing note 97 for track 5 with instrument type 'd'
+  Processing note 98 for track 5 with instrument type 'd'
+  Processing note 99 for track 5 with instrument type 'd'
+  Processing note 100 for track 5 with instrument type 'd'
+  Processing note 101 for track 5 with instrument type 'd'
+  Processing note 102 for track 5 with instrument type 'd'
+  Processing note 103 for track 5 with instrument type 'd'
+  Processing note 104 for track 5 with instrument type 'd'
+  Processing note 105 for track 5 with instrument type 'd'
+  Processing note 106 for track 5 with instrument type 'd'
+  Processing note 107 for track 5 with instrument type 'd'
+  Processing note 108 for track 5 with instrument type 'd'
+  Processing note 109 for track 5 with instrument type 'd'
+  Processing note 110 for track 5 with instrument type 'd'
+  Processing note 111 for track 5 with instrument type 'd'
+  Processing note 112 for track 5 with instrument type 'd'
+  Processing note 113 for track 5 with instrument type 'd'
+  Processing note 114 for track 5 with instrument type 'd'
+  Processing note 115 for track 5 with instrument type 'd'
+  Processing note 116 for track 5 with instrument type 'd'
+  Processing note 117 for track 5 with instrument type 'd'
+  Processing note 118 for track 5 with instrument type 'd'
+  Processing note 119 for track 5 with instrument type 'd'
+  Processing note 120 for track 5 with instrument type 'd'
+  Processing note 121 for track 5 with instrument type 'd'
+  Processing note 122 for track 5 with instrument type 'd'
+  Processing note 123 for track 5 with instrument type 'd'
+  Processing note 124 for track 5 with instrument type 'd'
+  Processing note 125 for track 5 with instrument type 'd'
+  Processing note 126 for track 5 with instrument type 'd'
+  Processing note 127 for track 5 with instrument type 'd'
+  Processing note 128 for track 5 with instrument type 'd'
+  Processing note 129 for track 5 with instrument type 'd'
+  Processing note 130 for track 5 with instrument type 'd'
+  Processing note 131 for track 5 with instrument type 'd'
+  Processing note 132 for track 5 with instrument type 'd'
+  Processing note 133 for track 5 with instrument type 'd'
+  Processing note 134 for track 5 with instrument type 'd'
+  Processing note 135 for track 5 with instrument type 'd'
+  Processing note 136 for track 5 with instrument type 'd'
+  Processing note 137 for track 5 with instrument type 'd'
+  Processing note 138 for track 5 with instrument type 'd'
+  Processing note 139 for track 5 with instrument type 'd'
+  Processing note 140 for track 5 with instrument type 'd'
+  Processing note 141 for track 5 with instrument type 'd'
+  Processing note 142 for track 5 with instrument type 'd'
+  Processing note 143 for track 5 with instrument type 'd'
+  Processing note 144 for track 5 with instrument type 'd'
+  Processing note 145 for track 5 with instrument type 'd'
+  Processing note 146 for track 5 with instrument type 'd'
+  Processing note 147 for track 5 with instrument type 'd'
+  Processing note 148 for track 5 with instrument type 'd'
+  Processing note 149 for track 5 with instrument type 'd'
+  Processing note 150 for track 5 with instrument type 'd'
+  Processing note 151 for track 5 with instrument type 'd'
+  Processing note 152 for track 5 with instrument type 'd'
+  Processing note 153 for track 5 with instrument type 'd'
+  Processing note 154 for track 5 with instrument type 'd'
+  Processing note 155 for track 5 with instrument type 'd'
+  Processing note 156 for track 5 with instrument type 'd'
+  Processing note 157 for track 5 with instrument type 'd'
+  Processing note 158 for track 5 with instrument type 'd'
+  Processing note 159 for track 5 with instrument type 'd'
+  Processing note 160 for track 5 with instrument type 'd'
+  Processing note 161 for track 5 with instrument type 'd'
+  Processing note 162 for track 5 with instrument type 'd'
+  Processing note 163 for track 5 with instrument type 'd'
+  Processing note 164 for track 5 with instrument type 'd'
+  Processing note 165 for track 5 with instrument type 'd'
+  Processing note 166 for track 5 with instrument type 'd'
+  Processing note 167 for track 5 with instrument type 'd'
+  Processing note 168 for track 5 with instrument type 'd'
+  Processing note 169 for track 5 with instrument type 'd'
+  Processing note 170 for track 5 with instrument type 'd'
+  Processing note 171 for track 5 with instrument type 'd'
+  Processing note 172 for track 5 with instrument type 'd'
+  Processing note 173 for track 5 with instrument type 'd'
+  Processing note 174 for track 5 with instrument type 'd'
+  Processing note 175 for track 5 with instrument type 'd'
+  Processing note 176 for track 5 with instrument type 'd'
+  Processing note 177 for track 5 with instrument type 'd'
+  Processing note 178 for track 5 with instrument type 'd'
+  Processing note 179 for track 5 with instrument type 'd'
+  Processing note 180 for track 5 with instrument type 'd'
+  Processing note 181 for track 5 with instrument type 'd'
+  Processing note 182 for track 5 with instrument type 'd'
+  Processing note 183 for track 5 with instrument type 'd'
+  Processing note 184 for track 5 with instrument type 'd'
+  Processing note 185 for track 5 with instrument type 'd'
+  Processing note 186 for track 5 with instrument type 'd'
+  Processing note 187 for track 5 with instrument type 'd'
+  Processing note 188 for track 5 with instrument type 'd'
+  Processing note 189 for track 5 with instrument type 'd'
+  Processing note 190 for track 5 with instrument type 'd'
+  Processing note 191 for track 5 with instrument type 'd'
+  Processing note 192 for track 5 with instrument type 'd'
+  Processing note 193 for track 5 with instrument type 'd'
+  Processing note 194 for track 5 with instrument type 'd'
+  Processing note 195 for track 5 with instrument type 'd'
+  Processing note 196 for track 5 with instrument type 'd'
+  Processing note 197 for track 5 with instrument type 'd'
+  Processing note 198 for track 5 with instrument type 'd'
+  Processing note 199 for track 5 with instrument type 'd'
+  Processing note 200 for track 5 with instrument type 'd'
+  Processing note 201 for track 5 with instrument type 'd'
+  Processing note 202 for track 5 with instrument type 'd'
+  Processing note 203 for track 5 with instrument type 'd'
+  Processing note 204 for track 5 with instrument type 'd'
+  Processing note 205 for track 5 with instrument type 'd'
+  Processing note 206 for track 5 with instrument type 'd'
+  Processing note 207 for track 5 with instrument type 'd'
+  Processing note 208 for track 5 with instrument type 'd'
+  Processing note 209 for track 5 with instrument type 'd'
+  Processing note 210 for track 5 with instrument type 'd'
+  Processing note 211 for track 5 with instrument type 'd'
+  Processing note 212 for track 5 with instrument type 'd'
+  Processing note 213 for track 5 with instrument type 'd'
+  Processing note 214 for track 5 with instrument type 'd'
+  Processing note 215 for track 5 with instrument type 'd'
+  Processing note 216 for track 5 with instrument type 'd'
+  Processing note 217 for track 5 with instrument type 'd'
+  Processing note 218 for track 5 with instrument type 'd'
+  Processing note 219 for track 5 with instrument type 'd'
+  Processing note 220 for track 5 with instrument type 'd'
+  Processing note 221 for track 5 with instrument type 'd'
+  Processing note 222 for track 5 with instrument type 'd'
+  Processing note 223 for track 5 with instrument type 'd'
+  Processing note 224 for track 5 with instrument type 'd'
+  Processing note 225 for track 5 with instrument type 'd'
+  Processing note 226 for track 5 with instrument type 'd'
+  Processing note 227 for track 5 with instrument type 'd'
+  Processing note 228 for track 5 with instrument type 'd'
+  Processing note 229 for track 5 with instrument type 'd'
+  Processing note 230 for track 5 with instrument type 'd'
+  Processing note 231 for track 5 with instrument type 'd'
+  Processing note 232 for track 5 with instrument type 'd'
+  Processing note 233 for track 5 with instrument type 'd'
+  Processing note 234 for track 5 with instrument type 'd'
+  Processing note 235 for track 5 with instrument type 'd'
+  Processing note 236 for track 5 with instrument type 'd'
+  Processing note 237 for track 5 with instrument type 'd'
+  Processing note 238 for track 5 with instrument type 'd'
+  Processing note 239 for track 5 with instrument type 'd'
+  Processing note 240 for track 5 with instrument type 'd'
+  Processing note 241 for track 5 with instrument type 'd'
+  Processing note 242 for track 5 with instrument type 'd'
+  Processing note 243 for track 5 with instrument type 'd'
+  Processing note 244 for track 5 with instrument type 'd'
+  Processing note 245 for track 5 with instrument type 'd'
+  Processing note 246 for track 5 with instrument type 'd'
+  Processing note 247 for track 5 with instrument type 'd'
+  Processing note 248 for track 5 with instrument type 'd'
+  Processing note 249 for track 5 with instrument type 'd'
+  Processing note 250 for track 5 with instrument type 'd'
+  Processing note 251 for track 5 with instrument type 'd'
+  Processing note 252 for track 5 with instrument type 'd'
+  Processing note 253 for track 5 with instrument type 'd'
+  Processing note 254 for track 5 with instrument type 'd'
+  Processing note 255 for track 5 with instrument type 'd'
+  Processing note 256 for track 5 with instrument type 'd'
+  Processing note 257 for track 5 with instrument type 'd'
+  Processing note 258 for track 5 with instrument type 'd'
+  Processing note 259 for track 5 with instrument type 'd'
+  Processing note 260 for track 5 with instrument type 'd'
+  Processing note 261 for track 5 with instrument type 'd'
+  Processing note 262 for track 5 with instrument type 'd'
+  Processing note 263 for track 5 with instrument type 'd'
+  Processing note 264 for track 5 with instrument type 'd'
+  Processing note 265 for track 5 with instrument type 'd'
+  Processing note 266 for track 5 with instrument type 'd'
+  Processing note 267 for track 5 with instrument type 'd'
+  Processing note 268 for track 5 with instrument type 'd'
+  Processing note 269 for track 5 with instrument type 'd'
+  Processing note 270 for track 5 with instrument type 'd'
+  Processing note 271 for track 5 with instrument type 'd'
+  Processing note 272 for track 5 with instrument type 'd'
+  Processing note 273 for track 5 with instrument type 'd'
+  Processing note 274 for track 5 with instrument type 'd'
+  Processing note 275 for track 5 with instrument type 'd'
+  Processing note 276 for track 5 with instrument type 'd'
+  Processing note 277 for track 5 with instrument type 'd'
+  Processing note 278 for track 5 with instrument type 'd'
+  Processing note 279 for track 5 with instrument type 'd'
+  Processing note 280 for track 5 with instrument type 'd'
+  Processing note 281 for track 5 with instrument type 'd'
+  Processing note 282 for track 5 with instrument type 'd'
+  Processing note 283 for track 5 with instrument type 'd'
+  Processing note 284 for track 5 with instrument type 'd'
+  Processing note 285 for track 5 with instrument type 'd'
+  Processing note 286 for track 5 with instrument type 'd'
+  Processing note 287 for track 5 with instrument type 'd'
+  Processing note 288 for track 5 with instrument type 'd'
+  Processing note 289 for track 5 with instrument type 'd'
+  Processing note 290 for track 5 with instrument type 'd'
+  Processing note 291 for track 5 with instrument type 'd'
+  Processing note 292 for track 5 with instrument type 'd'
+  Processing note 293 for track 5 with instrument type 'd'
+  Processing note 294 for track 5 with instrument type 'd'
+  Processing note 295 for track 5 with instrument type 'd'
+  Processing note 296 for track 5 with instrument type 'd'
+  Processing note 297 for track 5 with instrument type 'd'
+  Processing note 298 for track 5 with instrument type 'd'
+  Processing note 299 for track 5 with instrument type 'd'
+  Processing note 300 for track 5 with instrument type 'd'
+  Processing note 301 for track 5 with instrument type 'd'
+  Processing note 302 for track 5 with instrument type 'd'
+  Processing note 303 for track 5 with instrument type 'd'
+  Processing note 304 for track 5 with instrument type 'd'
+  Processing note 305 for track 5 with instrument type 'd'
+  Processing note 306 for track 5 with instrument type 'd'
+  Processing note 307 for track 5 with instrument type 'd'
+  Processing note 308 for track 5 with instrument type 'd'
+  Processing note 309 for track 5 with instrument type 'd'
+  Processing note 310 for track 5 with instrument type 'd'
+  Processing note 311 for track 5 with instrument type 'd'
+  Processing note 312 for track 5 with instrument type 'd'
+  Processing note 313 for track 5 with instrument type 'd'
+  Processing note 314 for track 5 with instrument type 'd'
+  Processing note 315 for track 5 with instrument type 'd'
+  Processing note 316 for track 5 with instrument type 'd'
+  Processing note 317 for track 5 with instrument type 'd'
+  Processing note 318 for track 5 with instrument type 'd'
+  Processing note 319 for track 5 with instrument type 'd'
+  Processing note 320 for track 5 with instrument type 'd'
+  Processing note 321 for track 5 with instrument type 'd'
+  Processing note 322 for track 5 with instrument type 'd'
+  Processing note 323 for track 5 with instrument type 'd'
+  Processing note 324 for track 5 with instrument type 'd'
+  Processing note 325 for track 5 with instrument type 'd'
+  Processing note 326 for track 5 with instrument type 'd'
+  Processing note 327 for track 5 with instrument type 'd'
+  Processing note 328 for track 5 with instrument type 'd'
+  Processing note 329 for track 5 with instrument type 'd'
+  Processing note 330 for track 5 with instrument type 'd'
+  Processing note 331 for track 5 with instrument type 'd'
+  Processing note 332 for track 5 with instrument type 'd'
+  Processing note 333 for track 5 with instrument type 'd'
+  Processing note 334 for track 5 with instrument type 'd'
+  Processing note 335 for track 5 with instrument type 'd'
+  Processing note 336 for track 5 with instrument type 'd'
+  Processing note 337 for track 5 with instrument type 'd'
+  Processing note 338 for track 5 with instrument type 'd'
+  Processing note 339 for track 5 with instrument type 'd'
+  Processing note 340 for track 5 with instrument type 'd'
+  Processing note 341 for track 5 with instrument type 'd'
+  Processing note 342 for track 5 with instrument type 'd'
+  Processing note 343 for track 5 with instrument type 'd'
+  Processing note 344 for track 5 with instrument type 'd'
+  Processing note 345 for track 5 with instrument type 'd'
+  Processing note 346 for track 5 with instrument type 'd'
+  Processing note 347 for track 5 with instrument type 'd'
+  Processing note 348 for track 5 with instrument type 'd'
+  Processing note 349 for track 5 with instrument type 'd'
+  Processing note 350 for track 5 with instrument type 'd'
+  Processing note 351 for track 5 with instrument type 'd'
+  Processing note 352 for track 5 with instrument type 'd'
+  Processing note 353 for track 5 with instrument type 'd'
+  Processing note 354 for track 5 with instrument type 'd'
+  Processing note 355 for track 5 with instrument type 'd'
+  Processing note 356 for track 5 with instrument type 'd'
+Track 5 processed 356 notes
+  Processing note 1 for track 4 with instrument type 'd'
+  Processing note 2 for track 4 with instrument type 'd'
+  Processing note 3 for track 4 with instrument type 'd'
+  Processing note 4 for track 4 with instrument type 'd'
+  Processing note 5 for track 4 with instrument type 'd'
+  Processing note 6 for track 4 with instrument type 'd'
+  Processing note 7 for track 4 with instrument type 'd'
+  Processing note 8 for track 4 with instrument type 'd'
+  Processing note 9 for track 4 with instrument type 'd'
+  Processing note 10 for track 4 with instrument type 'd'
+  Processing note 11 for track 4 with instrument type 'd'
+  Processing note 12 for track 4 with instrument type 'd'
+  Processing note 13 for track 4 with instrument type 'd'
+  Processing note 14 for track 4 with instrument type 'd'
+  Processing note 15 for track 4 with instrument type 'd'
+  Processing note 16 for track 4 with instrument type 'd'
+  Processing note 17 for track 4 with instrument type 'd'
+  Processing note 18 for track 4 with instrument type 'd'
+  Processing note 19 for track 4 with instrument type 'd'
+  Processing note 20 for track 4 with instrument type 'd'
+  Processing note 21 for track 4 with instrument type 'd'
+  Processing note 22 for track 4 with instrument type 'd'
+  Processing note 23 for track 4 with instrument type 'd'
+  Processing note 24 for track 4 with instrument type 'd'
+  Processing note 25 for track 4 with instrument type 'd'
+  Processing note 26 for track 4 with instrument type 'd'
+  Processing note 27 for track 4 with instrument type 'd'
+  Processing note 28 for track 4 with instrument type 'd'
+  Processing note 29 for track 4 with instrument type 'd'
+  Processing note 30 for track 4 with instrument type 'd'
+  Processing note 31 for track 4 with instrument type 'd'
+  Processing note 32 for track 4 with instrument type 'd'
+  Processing note 33 for track 4 with instrument type 'd'
+  Processing note 34 for track 4 with instrument type 'd'
+  Processing note 35 for track 4 with instrument type 'd'
+  Processing note 36 for track 4 with instrument type 'd'
+  Processing note 37 for track 4 with instrument type 'd'
+  Processing note 38 for track 4 with instrument type 'd'
+  Processing note 39 for track 4 with instrument type 'd'
+  Processing note 40 for track 4 with instrument type 'd'
+  Processing note 41 for track 4 with instrument type 'd'
+  Processing note 42 for track 4 with instrument type 'd'
+  Processing note 43 for track 4 with instrument type 'd'
+  Processing note 44 for track 4 with instrument type 'd'
+  Processing note 45 for track 4 with instrument type 'd'
+  Processing note 46 for track 4 with instrument type 'd'
+  Processing note 47 for track 4 with instrument type 'd'
+  Processing note 48 for track 4 with instrument type 'd'
+  Processing note 49 for track 4 with instrument type 'd'
+  Processing note 50 for track 4 with instrument type 'd'
+  Processing note 51 for track 4 with instrument type 'd'
+  Processing note 52 for track 4 with instrument type 'd'
+  Processing note 53 for track 4 with instrument type 'd'
+  Processing note 54 for track 4 with instrument type 'd'
+  Processing note 55 for track 4 with instrument type 'd'
+  Processing note 56 for track 4 with instrument type 'd'
+  Processing note 57 for track 4 with instrument type 'd'
+  Processing note 58 for track 4 with instrument type 'd'
+  Processing note 59 for track 4 with instrument type 'd'
+  Processing note 60 for track 4 with instrument type 'd'
+  Processing note 61 for track 4 with instrument type 'd'
+  Processing note 62 for track 4 with instrument type 'd'
+  Processing note 63 for track 4 with instrument type 'd'
+  Processing note 64 for track 4 with instrument type 'd'
+  Processing note 65 for track 4 with instrument type 'd'
+  Processing note 66 for track 4 with instrument type 'd'
+  Processing note 67 for track 4 with instrument type 'd'
+  Processing note 68 for track 4 with instrument type 'd'
+  Processing note 69 for track 4 with instrument type 'd'
+  Processing note 70 for track 4 with instrument type 'd'
+  Processing note 71 for track 4 with instrument type 'd'
+  Processing note 72 for track 4 with instrument type 'd'
+  Processing note 73 for track 4 with instrument type 'd'
+  Processing note 74 for track 4 with instrument type 'd'
+  Processing note 75 for track 4 with instrument type 'd'
+  Processing note 76 for track 4 with instrument type 'd'
+  Processing note 77 for track 4 with instrument type 'd'
+  Processing note 78 for track 4 with instrument type 'd'
+  Processing note 79 for track 4 with instrument type 'd'
+  Processing note 80 for track 4 with instrument type 'd'
+  Processing note 81 for track 4 with instrument type 'd'
+  Processing note 82 for track 4 with instrument type 'd'
+  Processing note 83 for track 4 with instrument type 'd'
+  Processing note 84 for track 4 with instrument type 'd'
+  Processing note 85 for track 4 with instrument type 'd'
+  Processing note 86 for track 4 with instrument type 'd'
+  Processing note 87 for track 4 with instrument type 'd'
+  Processing note 88 for track 4 with instrument type 'd'
+  Processing note 89 for track 4 with instrument type 'd'
+  Processing note 90 for track 4 with instrument type 'd'
+  Processing note 91 for track 4 with instrument type 'd'
+  Processing note 92 for track 4 with instrument type 'd'
+  Processing note 93 for track 4 with instrument type 'd'
+  Processing note 94 for track 4 with instrument type 'd'
+  Processing note 95 for track 4 with instrument type 'd'
+  Processing note 96 for track 4 with instrument type 'd'
+  Processing note 97 for track 4 with instrument type 'd'
+  Processing note 98 for track 4 with instrument type 'd'
+  Processing note 99 for track 4 with instrument type 'd'
+  Processing note 100 for track 4 with instrument type 'd'
+  Processing note 101 for track 4 with instrument type 'd'
+  Processing note 102 for track 4 with instrument type 'd'
+  Processing note 103 for track 4 with instrument type 'd'
+  Processing note 104 for track 4 with instrument type 'd'
+  Processing note 105 for track 4 with instrument type 'd'
+  Processing note 106 for track 4 with instrument type 'd'
+  Processing note 107 for track 4 with instrument type 'd'
+  Processing note 108 for track 4 with instrument type 'd'
+  Processing note 109 for track 4 with instrument type 'd'
+  Processing note 110 for track 4 with instrument type 'd'
+  Processing note 111 for track 4 with instrument type 'd'
+  Processing note 112 for track 4 with instrument type 'd'
+  Processing note 113 for track 4 with instrument type 'd'
+  Processing note 114 for track 4 with instrument type 'd'
+  Processing note 115 for track 4 with instrument type 'd'
+  Processing note 116 for track 4 with instrument type 'd'
+  Processing note 117 for track 4 with instrument type 'd'
+  Processing note 118 for track 4 with instrument type 'd'
+  Processing note 119 for track 4 with instrument type 'd'
+  Processing note 120 for track 4 with instrument type 'd'
+  Processing note 121 for track 4 with instrument type 'd'
+  Processing note 122 for track 4 with instrument type 'd'
+  Processing note 123 for track 4 with instrument type 'd'
+  Processing note 124 for track 4 with instrument type 'd'
+  Processing note 125 for track 4 with instrument type 'd'
+  Processing note 126 for track 4 with instrument type 'd'
+  Processing note 127 for track 4 with instrument type 'd'
+  Processing note 128 for track 4 with instrument type 'd'
+  Processing note 129 for track 4 with instrument type 'd'
+  Processing note 130 for track 4 with instrument type 'd'
+  Processing note 131 for track 4 with instrument type 'd'
+  Processing note 132 for track 4 with instrument type 'd'
+  Processing note 133 for track 4 with instrument type 'd'
+  Processing note 134 for track 4 with instrument type 'd'
+  Processing note 135 for track 4 with instrument type 'd'
+  Processing note 136 for track 4 with instrument type 'd'
+  Processing note 137 for track 4 with instrument type 'd'
+  Processing note 138 for track 4 with instrument type 'd'
+  Processing note 139 for track 4 with instrument type 'd'
+  Processing note 140 for track 4 with instrument type 'd'
+  Processing note 141 for track 4 with instrument type 'd'
+  Processing note 142 for track 4 with instrument type 'd'
+  Processing note 143 for track 4 with instrument type 'd'
+  Processing note 144 for track 4 with instrument type 'd'
+  Processing note 145 for track 4 with instrument type 'd'
+  Processing note 146 for track 4 with instrument type 'd'
+  Processing note 147 for track 4 with instrument type 'd'
+  Processing note 148 for track 4 with instrument type 'd'
+  Processing note 149 for track 4 with instrument type 'd'
+  Processing note 150 for track 4 with instrument type 'd'
+  Processing note 151 for track 4 with instrument type 'd'
+  Processing note 152 for track 4 with instrument type 'd'
+  Processing note 153 for track 4 with instrument type 'd'
+  Processing note 154 for track 4 with instrument type 'd'
+  Processing note 155 for track 4 with instrument type 'd'
+  Processing note 156 for track 4 with instrument type 'd'
+  Processing note 157 for track 4 with instrument type 'd'
+  Processing note 158 for track 4 with instrument type 'd'
+  Processing note 159 for track 4 with instrument type 'd'
+  Processing note 160 for track 4 with instrument type 'd'
+  Processing note 161 for track 4 with instrument type 'd'
+  Processing note 162 for track 4 with instrument type 'd'
+  Processing note 163 for track 4 with instrument type 'd'
+  Processing note 164 for track 4 with instrument type 'd'
+  Processing note 165 for track 4 with instrument type 'd'
+  Processing note 166 for track 4 with instrument type 'd'
+  Processing note 167 for track 4 with instrument type 'd'
+  Processing note 168 for track 4 with instrument type 'd'
+  Processing note 169 for track 4 with instrument type 'd'
+  Processing note 170 for track 4 with instrument type 'd'
+  Processing note 171 for track 4 with instrument type 'd'
+  Processing note 172 for track 4 with instrument type 'd'
+  Processing note 173 for track 4 with instrument type 'd'
+  Processing note 174 for track 4 with instrument type 'd'
+  Processing note 175 for track 4 with instrument type 'd'
+  Processing note 176 for track 4 with instrument type 'd'
+  Processing note 177 for track 4 with instrument type 'd'
+  Processing note 178 for track 4 with instrument type 'd'
+  Processing note 179 for track 4 with instrument type 'd'
+  Processing note 180 for track 4 with instrument type 'd'
+  Processing note 181 for track 4 with instrument type 'd'
+  Processing note 182 for track 4 with instrument type 'd'
+  Processing note 183 for track 4 with instrument type 'd'
+  Processing note 184 for track 4 with instrument type 'd'
+  Processing note 185 for track 4 with instrument type 'd'
+  Processing note 186 for track 4 with instrument type 'd'
+  Processing note 187 for track 4 with instrument type 'd'
+  Processing note 188 for track 4 with instrument type 'd'
+  Processing note 189 for track 4 with instrument type 'd'
+  Processing note 190 for track 4 with instrument type 'd'
+  Processing note 191 for track 4 with instrument type 'd'
+  Processing note 192 for track 4 with instrument type 'd'
+  Processing note 193 for track 4 with instrument type 'd'
+  Processing note 194 for track 4 with instrument type 'd'
+  Processing note 195 for track 4 with instrument type 'd'
+  Processing note 196 for track 4 with instrument type 'd'
+  Processing note 197 for track 4 with instrument type 'd'
+  Processing note 198 for track 4 with instrument type 'd'
+  Processing note 199 for track 4 with instrument type 'd'
+  Processing note 200 for track 4 with instrument type 'd'
+  Processing note 201 for track 4 with instrument type 'd'
+  Processing note 202 for track 4 with instrument type 'd'
+  Processing note 203 for track 4 with instrument type 'd'
+  Processing note 204 for track 4 with instrument type 'd'
+  Processing note 205 for track 4 with instrument type 'd'
+  Processing note 206 for track 4 with instrument type 'd'
+  Processing note 207 for track 4 with instrument type 'd'
+  Processing note 208 for track 4 with instrument type 'd'
+  Processing note 209 for track 4 with instrument type 'd'
+  Processing note 210 for track 4 with instrument type 'd'
+  Processing note 211 for track 4 with instrument type 'd'
+  Processing note 212 for track 4 with instrument type 'd'
+  Processing note 213 for track 4 with instrument type 'd'
+  Processing note 214 for track 4 with instrument type 'd'
+  Processing note 215 for track 4 with instrument type 'd'
+  Processing note 216 for track 4 with instrument type 'd'
+  Processing note 217 for track 4 with instrument type 'd'
+  Processing note 218 for track 4 with instrument type 'd'
+  Processing note 219 for track 4 with instrument type 'd'
+  Processing note 220 for track 4 with instrument type 'd'
+  Processing note 221 for track 4 with instrument type 'd'
+  Processing note 222 for track 4 with instrument type 'd'
+  Processing note 223 for track 4 with instrument type 'd'
+  Processing note 224 for track 4 with instrument type 'd'
+  Processing note 225 for track 4 with instrument type 'd'
+  Processing note 226 for track 4 with instrument type 'd'
+  Processing note 227 for track 4 with instrument type 'd'
+  Processing note 228 for track 4 with instrument type 'd'
+  Processing note 229 for track 4 with instrument type 'd'
+  Processing note 230 for track 4 with instrument type 'd'
+  Processing note 231 for track 4 with instrument type 'd'
+  Processing note 232 for track 4 with instrument type 'd'
+  Processing note 233 for track 4 with instrument type 'd'
+  Processing note 234 for track 4 with instrument type 'd'
+  Processing note 235 for track 4 with instrument type 'd'
+  Processing note 236 for track 4 with instrument type 'd'
+  Processing note 237 for track 4 with instrument type 'd'
+  Processing note 238 for track 4 with instrument type 'd'
+  Processing note 239 for track 4 with instrument type 'd'
+  Processing note 240 for track 4 with instrument type 'd'
+  Processing note 241 for track 4 with instrument type 'd'
+  Processing note 242 for track 4 with instrument type 'd'
+  Processing note 243 for track 4 with instrument type 'd'
+  Processing note 244 for track 4 with instrument type 'd'
+  Processing note 245 for track 4 with instrument type 'd'
+  Processing note 246 for track 4 with instrument type 'd'
+  Processing note 247 for track 4 with instrument type 'd'
+  Processing note 248 for track 4 with instrument type 'd'
+  Processing note 249 for track 4 with instrument type 'd'
+  Processing note 250 for track 4 with instrument type 'd'
+  Processing note 251 for track 4 with instrument type 'd'
+  Processing note 252 for track 4 with instrument type 'd'
+  Processing note 253 for track 4 with instrument type 'd'
+  Processing note 254 for track 4 with instrument type 'd'
+  Processing note 255 for track 4 with instrument type 'd'
+  Processing note 256 for track 4 with instrument type 'd'
+  Processing note 257 for track 4 with instrument type 'd'
+  Processing note 258 for track 4 with instrument type 'd'
+  Processing note 259 for track 4 with instrument type 'd'
+  Processing note 260 for track 4 with instrument type 'd'
+  Processing note 261 for track 4 with instrument type 'd'
+  Processing note 262 for track 4 with instrument type 'd'
+  Processing note 263 for track 4 with instrument type 'd'
+  Processing note 264 for track 4 with instrument type 'd'
+  Processing note 265 for track 4 with instrument type 'd'
+  Processing note 266 for track 4 with instrument type 'd'
+  Processing note 267 for track 4 with instrument type 'd'
+  Processing note 268 for track 4 with instrument type 'd'
+  Processing note 269 for track 4 with instrument type 'd'
+  Processing note 270 for track 4 with instrument type 'd'
+  Processing note 271 for track 4 with instrument type 'd'
+  Processing note 272 for track 4 with instrument type 'd'
+  Processing note 273 for track 4 with instrument type 'd'
+  Processing note 274 for track 4 with instrument type 'd'
+  Processing note 275 for track 4 with instrument type 'd'
+  Processing note 276 for track 4 with instrument type 'd'
+  Processing note 277 for track 4 with instrument type 'd'
+  Processing note 278 for track 4 with instrument type 'd'
+  Processing note 279 for track 4 with instrument type 'd'
+  Processing note 280 for track 4 with instrument type 'd'
+  Processing note 281 for track 4 with instrument type 'd'
+  Processing note 282 for track 4 with instrument type 'd'
+  Processing note 283 for track 4 with instrument type 'd'
+  Processing note 284 for track 4 with instrument type 'd'
+  Processing note 285 for track 4 with instrument type 'd'
+  Processing note 286 for track 4 with instrument type 'd'
+  Processing note 287 for track 4 with instrument type 'd'
+  Processing note 288 for track 4 with instrument type 'd'
+  Processing note 289 for track 4 with instrument type 'd'
+  Processing note 290 for track 4 with instrument type 'd'
+  Processing note 291 for track 4 with instrument type 'd'
+  Processing note 292 for track 4 with instrument type 'd'
+  Processing note 293 for track 4 with instrument type 'd'
+  Processing note 294 for track 4 with instrument type 'd'
+  Processing note 295 for track 4 with instrument type 'd'
+  Processing note 296 for track 4 with instrument type 'd'
+  Processing note 297 for track 4 with instrument type 'd'
+  Processing note 298 for track 4 with instrument type 'd'
+  Processing note 299 for track 4 with instrument type 'd'
+  Processing note 300 for track 4 with instrument type 'd'
+  Processing note 301 for track 4 with instrument type 'd'
+  Processing note 302 for track 4 with instrument type 'd'
+  Processing note 303 for track 4 with instrument type 'd'
+  Processing note 304 for track 4 with instrument type 'd'
+  Processing note 305 for track 4 with instrument type 'd'
+  Processing note 306 for track 4 with instrument type 'd'
+  Processing note 307 for track 4 with instrument type 'd'
+  Processing note 308 for track 4 with instrument type 'd'
+  Processing note 309 for track 4 with instrument type 'd'
+  Processing note 310 for track 4 with instrument type 'd'
+  Processing note 311 for track 4 with instrument type 'd'
+  Processing note 312 for track 4 with instrument type 'd'
+  Processing note 313 for track 4 with instrument type 'd'
+  Processing note 314 for track 4 with instrument type 'd'
+  Processing note 315 for track 4 with instrument type 'd'
+  Processing note 316 for track 4 with instrument type 'd'
+  Processing note 317 for track 4 with instrument type 'd'
+  Processing note 318 for track 4 with instrument type 'd'
+  Processing note 319 for track 4 with instrument type 'd'
+  Processing note 320 for track 4 with instrument type 'd'
+  Processing note 321 for track 4 with instrument type 'd'
+  Processing note 322 for track 4 with instrument type 'd'
+  Processing note 323 for track 4 with instrument type 'd'
+  Processing note 324 for track 4 with instrument type 'd'
+  Processing note 325 for track 4 with instrument type 'd'
+  Processing note 326 for track 4 with instrument type 'd'
+  Processing note 327 for track 4 with instrument type 'd'
+  Processing note 328 for track 4 with instrument type 'd'
+  Processing note 329 for track 4 with instrument type 'd'
+  Processing note 330 for track 4 with instrument type 'd'
+  Processing note 331 for track 4 with instrument type 'd'
+  Processing note 332 for track 4 with instrument type 'd'
+  Processing note 333 for track 4 with instrument type 'd'
+  Processing note 334 for track 4 with instrument type 'd'
+  Processing note 335 for track 4 with instrument type 'd'
+  Processing note 336 for track 4 with instrument type 'd'
+  Processing note 337 for track 4 with instrument type 'd'
+  Processing note 338 for track 4 with instrument type 'd'
+  Processing note 339 for track 4 with instrument type 'd'
+  Processing note 340 for track 4 with instrument type 'd'
+  Processing note 341 for track 4 with instrument type 'd'
+  Processing note 342 for track 4 with instrument type 'd'
+  Processing note 343 for track 4 with instrument type 'd'
+  Processing note 344 for track 4 with instrument type 'd'
+  Processing note 345 for track 4 with instrument type 'd'
+  Processing note 346 for track 4 with instrument type 'd'
+  Processing note 347 for track 4 with instrument type 'd'
+  Processing note 348 for track 4 with instrument type 'd'
+  Processing note 349 for track 4 with instrument type 'd'
+  Processing note 350 for track 4 with instrument type 'd'
+  Processing note 351 for track 4 with instrument type 'd'
+  Processing note 352 for track 4 with instrument type 'd'
+  Processing note 353 for track 4 with instrument type 'd'
+  Processing note 354 for track 4 with instrument type 'd'
+  Processing note 355 for track 4 with instrument type 'd'
+  Processing note 356 for track 4 with instrument type 'd'
+  Processing note 357 for track 4 with instrument type 'd'
+  Processing note 358 for track 4 with instrument type 'd'
+  Processing note 359 for track 4 with instrument type 'd'
+  Processing note 360 for track 4 with instrument type 'd'
+  Processing note 361 for track 4 with instrument type 'd'
+  Processing note 362 for track 4 with instrument type 'd'
+  Processing note 363 for track 4 with instrument type 'd'
+  Processing note 364 for track 4 with instrument type 'd'
+  Processing note 365 for track 4 with instrument type 'd'
+  Processing note 366 for track 4 with instrument type 'd'
+  Processing note 367 for track 4 with instrument type 'd'
+  Processing note 368 for track 4 with instrument type 'd'
+  Processing note 369 for track 4 with instrument type 'd'
+  Processing note 370 for track 4 with instrument type 'd'
+  Processing note 371 for track 4 with instrument type 'd'
+  Processing note 372 for track 4 with instrument type 'd'
+  Processing note 373 for track 4 with instrument type 'd'
+  Processing note 374 for track 4 with instrument type 'd'
+  Processing note 375 for track 4 with instrument type 'd'
+  Processing note 376 for track 4 with instrument type 'd'
+  Processing note 377 for track 4 with instrument type 'd'
+  Processing note 378 for track 4 with instrument type 'd'
+  Processing note 379 for track 4 with instrument type 'd'
+  Processing note 380 for track 4 with instrument type 'd'
+  Processing note 381 for track 4 with instrument type 'd'
+  Processing note 382 for track 4 with instrument type 'd'
+  Processing note 383 for track 4 with instrument type 'd'
+  Processing note 384 for track 4 with instrument type 'd'
+  Processing note 385 for track 4 with instrument type 'd'
+  Processing note 386 for track 4 with instrument type 'd'
+  Processing note 387 for track 4 with instrument type 'd'
+  Processing note 388 for track 4 with instrument type 'd'
+  Processing note 389 for track 4 with instrument type 'd'
+  Processing note 390 for track 4 with instrument type 'd'
+  Processing note 391 for track 4 with instrument type 'd'
+  Processing note 392 for track 4 with instrument type 'd'
+  Processing note 393 for track 4 with instrument type 'd'
+  Processing note 394 for track 4 with instrument type 'd'
+  Processing note 395 for track 4 with instrument type 'd'
+  Processing note 396 for track 4 with instrument type 'd'
+  Processing note 397 for track 4 with instrument type 'd'
+  Processing note 398 for track 4 with instrument type 'd'
+  Processing note 399 for track 4 with instrument type 'd'
+  Processing note 400 for track 4 with instrument type 'd'
+  Processing note 401 for track 4 with instrument type 'd'
+  Processing note 402 for track 4 with instrument type 'd'
+  Processing note 403 for track 4 with instrument type 'd'
+  Processing note 404 for track 4 with instrument type 'd'
+  Processing note 405 for track 4 with instrument type 'd'
+  Processing note 406 for track 4 with instrument type 'd'
+  Processing note 407 for track 4 with instrument type 'd'
+  Processing note 408 for track 4 with instrument type 'd'
+  Processing note 409 for track 4 with instrument type 'd'
+  Processing note 410 for track 4 with instrument type 'd'
+  Processing note 411 for track 4 with instrument type 'd'
+  Processing note 412 for track 4 with instrument type 'd'
+  Processing note 413 for track 4 with instrument type 'd'
+  Processing note 414 for track 4 with instrument type 'd'
+  Processing note 415 for track 4 with instrument type 'd'
+  Processing note 416 for track 4 with instrument type 'd'
+  Processing note 417 for track 4 with instrument type 'd'
+  Processing note 418 for track 4 with instrument type 'd'
+  Processing note 419 for track 4 with instrument type 'd'
+  Processing note 420 for track 4 with instrument type 'd'
+  Processing note 421 for track 4 with instrument type 'd'
+  Processing note 422 for track 4 with instrument type 'd'
+  Processing note 423 for track 4 with instrument type 'd'
+  Processing note 424 for track 4 with instrument type 'd'
+  Processing note 425 for track 4 with instrument type 'd'
+  Processing note 426 for track 4 with instrument type 'd'
+  Processing note 427 for track 4 with instrument type 'd'
+  Processing note 428 for track 4 with instrument type 'd'
+  Processing note 429 for track 4 with instrument type 'd'
+  Processing note 430 for track 4 with instrument type 'd'
+  Processing note 431 for track 4 with instrument type 'd'
+  Processing note 432 for track 4 with instrument type 'd'
+  Processing note 433 for track 4 with instrument type 'd'
+  Processing note 434 for track 4 with instrument type 'd'
+  Processing note 435 for track 4 with instrument type 'd'
+  Processing note 436 for track 4 with instrument type 'd'
+  Processing note 437 for track 4 with instrument type 'd'
+  Processing note 438 for track 4 with instrument type 'd'
+  Processing note 439 for track 4 with instrument type 'd'
+  Processing note 440 for track 4 with instrument type 'd'
+  Processing note 441 for track 4 with instrument type 'd'
+  Processing note 442 for track 4 with instrument type 'd'
+  Processing note 443 for track 4 with instrument type 'd'
+  Processing note 444 for track 4 with instrument type 'd'
+  Processing note 445 for track 4 with instrument type 'd'
+  Processing note 446 for track 4 with instrument type 'd'
+  Processing note 447 for track 4 with instrument type 'd'
+  Processing note 448 for track 4 with instrument type 'd'
+Track 4 processed 448 notes
+  Processing note 1 for track 3 with instrument type 'd'
+  Processing note 2 for track 3 with instrument type 'd'
+  Processing note 3 for track 3 with instrument type 'd'
+  Processing note 4 for track 3 with instrument type 'd'
+  Processing note 5 for track 3 with instrument type 'd'
+  Processing note 6 for track 3 with instrument type 'd'
+  Processing note 7 for track 3 with instrument type 'd'
+  Processing note 8 for track 3 with instrument type 'd'
+  Processing note 9 for track 3 with instrument type 'd'
+  Processing note 10 for track 3 with instrument type 'd'
+  Processing note 11 for track 3 with instrument type 'd'
+  Processing note 12 for track 3 with instrument type 'd'
+  Processing note 13 for track 3 with instrument type 'd'
+  Processing note 14 for track 3 with instrument type 'd'
+  Processing note 15 for track 3 with instrument type 'd'
+  Processing note 16 for track 3 with instrument type 'd'
+  Processing note 17 for track 3 with instrument type 'd'
+  Processing note 18 for track 3 with instrument type 'd'
+  Processing note 19 for track 3 with instrument type 'd'
+  Processing note 20 for track 3 with instrument type 'd'
+  Processing note 21 for track 3 with instrument type 'd'
+  Processing note 22 for track 3 with instrument type 'd'
+  Processing note 23 for track 3 with instrument type 'd'
+  Processing note 24 for track 3 with instrument type 'd'
+  Processing note 25 for track 3 with instrument type 'd'
+  Processing note 26 for track 3 with instrument type 'd'
+  Processing note 27 for track 3 with instrument type 'd'
+  Processing note 28 for track 3 with instrument type 'd'
+  Processing note 29 for track 3 with instrument type 'd'
+  Processing note 30 for track 3 with instrument type 'd'
+  Processing note 31 for track 3 with instrument type 'd'
+  Processing note 32 for track 3 with instrument type 'd'
+  Processing note 33 for track 3 with instrument type 'd'
+  Processing note 34 for track 3 with instrument type 'd'
+  Processing note 35 for track 3 with instrument type 'd'
+  Processing note 36 for track 3 with instrument type 'd'
+  Processing note 37 for track 3 with instrument type 'd'
+  Processing note 38 for track 3 with instrument type 'd'
+  Processing note 39 for track 3 with instrument type 'd'
+  Processing note 40 for track 3 with instrument type 'd'
+  Processing note 41 for track 3 with instrument type 'd'
+  Processing note 42 for track 3 with instrument type 'd'
+  Processing note 43 for track 3 with instrument type 'd'
+  Processing note 44 for track 3 with instrument type 'd'
+  Processing note 45 for track 3 with instrument type 'd'
+  Processing note 46 for track 3 with instrument type 'd'
+  Processing note 47 for track 3 with instrument type 'd'
+  Processing note 48 for track 3 with instrument type 'd'
+  Processing note 49 for track 3 with instrument type 'd'
+  Processing note 50 for track 3 with instrument type 'd'
+  Processing note 51 for track 3 with instrument type 'd'
+  Processing note 52 for track 3 with instrument type 'd'
+  Processing note 53 for track 3 with instrument type 'd'
+  Processing note 54 for track 3 with instrument type 'd'
+  Processing note 55 for track 3 with instrument type 'd'
+  Processing note 56 for track 3 with instrument type 'd'
+  Processing note 57 for track 3 with instrument type 'd'
+  Processing note 58 for track 3 with instrument type 'd'
+  Processing note 59 for track 3 with instrument type 'd'
+  Processing note 60 for track 3 with instrument type 'd'
+  Processing note 61 for track 3 with instrument type 'd'
+  Processing note 62 for track 3 with instrument type 'd'
+  Processing note 63 for track 3 with instrument type 'd'
+  Processing note 64 for track 3 with instrument type 'd'
+Track 3 processed 64 notes
+  Processing note 1 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=70 at pos=0
+  Processing note 2 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=74 to chord at pos=0, chord now: [70 74]
+  Processing note 3 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=62 at pos=16
+  Processing note 4 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=65 to chord at pos=16, chord now: [62 65]
+  Processing note 5 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=63 at pos=32
+  Processing note 6 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=67 to chord at pos=32, chord now: [63 67]
+  Processing note 7 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=67 at pos=60
+  Processing note 8 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=70 to chord at pos=60, chord now: [67 70]
+  Processing note 9 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=65 at pos=80
+  Processing note 10 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=69 to chord at pos=80, chord now: [65 69]
+  Processing note 11 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=62 at pos=96
+  Processing note 12 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=67 to chord at pos=96, chord now: [62 67]
+  Processing note 13 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=70 at pos=128
+  Processing note 14 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=74 to chord at pos=128, chord now: [70 74]
+  Processing note 15 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=62 at pos=144
+  Processing note 16 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=65 to chord at pos=144, chord now: [62 65]
+  Processing note 17 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=63 at pos=160
+  Processing note 18 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=67 to chord at pos=160, chord now: [63 67]
+  Processing note 19 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=67 at pos=188
+  Processing note 20 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=70 to chord at pos=188, chord now: [67 70]
+  Processing note 21 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=65 at pos=208
+  Processing note 22 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=69 to chord at pos=208, chord now: [65 69]
+  Processing note 23 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=62 at pos=224
+  Processing note 24 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=67 to chord at pos=224, chord now: [62 67]
+  Processing note 25 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=70 at pos=256
+  Processing note 26 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=74 to chord at pos=256, chord now: [70 74]
+  Processing note 27 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=62 at pos=272
+  Processing note 28 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=65 to chord at pos=272, chord now: [62 65]
+  Processing note 29 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=63 at pos=288
+  Processing note 30 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=67 to chord at pos=288, chord now: [63 67]
+  Processing note 31 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=67 at pos=316
+  Processing note 32 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=70 to chord at pos=316, chord now: [67 70]
+  Processing note 33 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=65 at pos=336
+  Processing note 34 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=69 to chord at pos=336, chord now: [65 69]
+  Processing note 35 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=62 at pos=352
+  Processing note 36 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=67 to chord at pos=352, chord now: [62 67]
+  Processing note 37 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=70 at pos=384
+  Processing note 38 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=74 to chord at pos=384, chord now: [70 74]
+  Processing note 39 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=62 at pos=400
+  Processing note 40 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=65 to chord at pos=400, chord now: [62 65]
+  Processing note 41 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=63 at pos=416
+  Processing note 42 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=67 to chord at pos=416, chord now: [63 67]
+  Processing note 43 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=67 at pos=444
+  Processing note 44 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=70 to chord at pos=444, chord now: [67 70]
+  Processing note 45 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=65 at pos=464
+  Processing note 46 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=69 to chord at pos=464, chord now: [65 69]
+  Processing note 47 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=62 at pos=480
+  Processing note 48 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=67 to chord at pos=480, chord now: [62 67]
+  Processing note 49 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=62 at pos=512
+  Processing note 50 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=65 to chord at pos=512, chord now: [62 65]
+  Processing note 51 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=46 to chord at pos=512, chord now: [62 65 46]
+  Processing note 52 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+  Processing note 53 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+  Processing note 54 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=46 at pos=576
+  Processing note 55 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=58 to chord at pos=576, chord now: [46 58]
+  Processing note 56 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=62 to chord at pos=576, chord now: [46 58 62]
+  Processing note 57 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=46 at pos=604
+  Processing note 58 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=51 to chord at pos=604, chord now: [46 51]
+  Processing note 59 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=55 to chord at pos=604, chord now: [46 51 55]
+  Processing note 60 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=58 at pos=640
+  Processing note 61 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=63 to chord at pos=640, chord now: [58 63]
+  Processing note 62 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=53 at pos=664
+  Processing note 63 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=58 to chord at pos=664, chord now: [53 58]
+  Processing note 64 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=48 at pos=728
+  Processing note 65 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=53 at pos=704
+  Processing note 66 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=57 to chord at pos=704, chord now: [53 57]
+  Processing note 67 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=62 at pos=768
+  Processing note 68 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=65 to chord at pos=768, chord now: [62 65]
+  Processing note 69 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=46 to chord at pos=768, chord now: [62 65 46]
+  Processing note 70 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+  Processing note 71 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+  Processing note 72 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=46 at pos=832
+  Processing note 73 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=58 to chord at pos=832, chord now: [46 58]
+  Processing note 74 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=62 to chord at pos=832, chord now: [46 58 62]
+  Processing note 75 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=46 at pos=860
+  Processing note 76 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=51 to chord at pos=860, chord now: [46 51]
+  Processing note 77 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=55 to chord at pos=860, chord now: [46 51 55]
+  Processing note 78 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=58 at pos=896
+  Processing note 79 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=63 to chord at pos=896, chord now: [58 63]
+  Processing note 80 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=53 at pos=920
+  Processing note 81 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=58 to chord at pos=920, chord now: [53 58]
+  Processing note 82 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=48 at pos=984
+  Processing note 83 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=53 at pos=960
+  Processing note 84 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: added note MIDI=57 to chord at pos=960, chord now: [53 57]
+  Processing note 85 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=43 at pos=1024
+  Processing note 86 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1028
+  Processing note 87 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=53 at pos=1036
+  Processing note 88 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1044
+  Processing note 89 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=53 at pos=1048
+  Processing note 90 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1052
+  Processing note 91 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=46 at pos=1056
+  Processing note 92 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=57 at pos=1060
+  Processing note 93 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=58 at pos=1092
+  Processing note 94 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=55 at pos=1100
+  Processing note 95 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=51 at pos=1108
+  Processing note 96 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1124
+  Processing note 97 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=51 at pos=1132
+  Processing note 98 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1140
+  Processing note 99 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=51 at pos=1144
+  Processing note 100 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=48 at pos=1148
+  Processing note 101 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=43 at pos=1184
+  Processing note 102 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1188
+  Processing note 103 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=53 at pos=1196
+  Processing note 104 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1204
+  Processing note 105 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=53 at pos=1208
+  Processing note 106 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1212
+  Processing note 107 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=46 at pos=1216
+  Processing note 108 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=57 at pos=1220
+  Processing note 109 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=58 at pos=1252
+  Processing note 110 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=60 at pos=1260
+  Processing note 111 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=62 at pos=1268
+  Processing note 112 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=62 at pos=1276
+  Processing note 113 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=55 at pos=1284
+  Processing note 114 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=53 at pos=1292
+  Processing note 115 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=48 at pos=1300
+  Processing note 116 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=43 at pos=1344
+  Processing note 117 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1348
+  Processing note 118 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=53 at pos=1356
+  Processing note 119 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1364
+  Processing note 120 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=53 at pos=1368
+  Processing note 121 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1372
+  Processing note 122 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=46 at pos=1376
+  Processing note 123 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=57 at pos=1380
+  Processing note 124 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=58 at pos=1412
+  Processing note 125 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=55 at pos=1420
+  Processing note 126 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=51 at pos=1428
+  Processing note 127 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=48 at pos=1436
+  Processing note 128 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1444
+  Processing note 129 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=51 at pos=1452
+  Processing note 130 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1460
+  Processing note 131 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=51 at pos=1464
+  Processing note 132 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=48 at pos=1468
+  Processing note 133 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=43 at pos=1504
+  Processing note 134 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1508
+  Processing note 135 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=53 at pos=1516
+  Processing note 136 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1524
+  Processing note 137 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=53 at pos=1528
+  Processing note 138 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=50 at pos=1532
+  Processing note 139 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=46 at pos=1536
+  Processing note 140 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=57 at pos=1540
+  Processing note 141 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=58 at pos=1572
+  Processing note 142 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=60 at pos=1580
+  Processing note 143 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=62 at pos=1588
+  Processing note 144 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=62 at pos=1596
+  Processing note 145 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=55 at pos=1604
+  Processing note 146 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=53 at pos=1612
+  Processing note 147 for track 1 with instrument type 'p'
+  -> Processing as polyphonic
+    Polyphonic: placed start note MIDI=48 at pos=1620
+Track 1 processed 147 notes
+  Processing note 1 for track 2 with instrument type 'm'
+  Processing note 2 for track 2 with instrument type 'm'
+  Processing note 3 for track 2 with instrument type 'm'
+  Processing note 4 for track 2 with instrument type 'm'
+  Processing note 5 for track 2 with instrument type 'm'
+  Processing note 6 for track 2 with instrument type 'm'
+  Processing note 7 for track 2 with instrument type 'm'
+  Processing note 8 for track 2 with instrument type 'm'
+  Processing note 9 for track 2 with instrument type 'm'
+  Processing note 10 for track 2 with instrument type 'm'
+  Processing note 11 for track 2 with instrument type 'm'
+  Processing note 12 for track 2 with instrument type 'm'
+  Processing note 13 for track 2 with instrument type 'm'
+  Processing note 14 for track 2 with instrument type 'm'
+  Processing note 15 for track 2 with instrument type 'm'
+  Processing note 16 for track 2 with instrument type 'm'
+  Processing note 17 for track 2 with instrument type 'm'
+  Processing note 18 for track 2 with instrument type 'm'
+  Processing note 19 for track 2 with instrument type 'm'
+  Processing note 20 for track 2 with instrument type 'm'
+  Processing note 21 for track 2 with instrument type 'm'
+  Processing note 22 for track 2 with instrument type 'm'
+  Processing note 23 for track 2 with instrument type 'm'
+  Processing note 24 for track 2 with instrument type 'm'
+  Processing note 25 for track 2 with instrument type 'm'
+  Processing note 26 for track 2 with instrument type 'm'
+  Processing note 27 for track 2 with instrument type 'm'
+  Processing note 28 for track 2 with instrument type 'm'
+  Processing note 29 for track 2 with instrument type 'm'
+  Processing note 30 for track 2 with instrument type 'm'
+  Processing note 31 for track 2 with instrument type 'm'
+  Processing note 32 for track 2 with instrument type 'm'
+  Processing note 33 for track 2 with instrument type 'm'
+  Processing note 34 for track 2 with instrument type 'm'
+  Processing note 35 for track 2 with instrument type 'm'
+  Processing note 36 for track 2 with instrument type 'm'
+  Processing note 37 for track 2 with instrument type 'm'
+  Processing note 38 for track 2 with instrument type 'm'
+  Processing note 39 for track 2 with instrument type 'm'
+  Processing note 40 for track 2 with instrument type 'm'
+  Processing note 41 for track 2 with instrument type 'm'
+  Processing note 42 for track 2 with instrument type 'm'
+  Processing note 43 for track 2 with instrument type 'm'
+  Processing note 44 for track 2 with instrument type 'm'
+  Processing note 45 for track 2 with instrument type 'm'
+  Processing note 46 for track 2 with instrument type 'm'
+  Processing note 47 for track 2 with instrument type 'm'
+  Processing note 48 for track 2 with instrument type 'm'
+  Processing note 49 for track 2 with instrument type 'm'
+  Processing note 50 for track 2 with instrument type 'm'
+  Processing note 51 for track 2 with instrument type 'm'
+  Processing note 52 for track 2 with instrument type 'm'
+  Processing note 53 for track 2 with instrument type 'm'
+  Processing note 54 for track 2 with instrument type 'm'
+  Processing note 55 for track 2 with instrument type 'm'
+  Processing note 56 for track 2 with instrument type 'm'
+  Processing note 57 for track 2 with instrument type 'm'
+  Processing note 58 for track 2 with instrument type 'm'
+  Processing note 59 for track 2 with instrument type 'm'
+  Processing note 60 for track 2 with instrument type 'm'
+  Processing note 61 for track 2 with instrument type 'm'
+  Processing note 62 for track 2 with instrument type 'm'
+  Processing note 63 for track 2 with instrument type 'm'
+  Processing note 64 for track 2 with instrument type 'm'
+  Processing note 65 for track 2 with instrument type 'm'
+  Processing note 66 for track 2 with instrument type 'm'
+  Processing note 67 for track 2 with instrument type 'm'
+  Processing note 68 for track 2 with instrument type 'm'
+  Processing note 69 for track 2 with instrument type 'm'
+  Processing note 70 for track 2 with instrument type 'm'
+  Processing note 71 for track 2 with instrument type 'm'
+  Processing note 72 for track 2 with instrument type 'm'
+  Processing note 73 for track 2 with instrument type 'm'
+  Processing note 74 for track 2 with instrument type 'm'
+  Processing note 75 for track 2 with instrument type 'm'
+  Processing note 76 for track 2 with instrument type 'm'
+  Processing note 77 for track 2 with instrument type 'm'
+  Processing note 78 for track 2 with instrument type 'm'
+  Processing note 79 for track 2 with instrument type 'm'
+  Processing note 80 for track 2 with instrument type 'm'
+  Processing note 81 for track 2 with instrument type 'm'
+  Processing note 82 for track 2 with instrument type 'm'
+  Processing note 83 for track 2 with instrument type 'm'
+  Processing note 84 for track 2 with instrument type 'm'
+  Processing note 85 for track 2 with instrument type 'm'
+  Processing note 86 for track 2 with instrument type 'm'
+  Processing note 87 for track 2 with instrument type 'm'
+  Processing note 88 for track 2 with instrument type 'm'
+  Processing note 89 for track 2 with instrument type 'm'
+  Processing note 90 for track 2 with instrument type 'm'
+  Processing note 91 for track 2 with instrument type 'm'
+  Processing note 92 for track 2 with instrument type 'm'
+  Processing note 93 for track 2 with instrument type 'm'
+  Processing note 94 for track 2 with instrument type 'm'
+  Processing note 95 for track 2 with instrument type 'm'
+  Processing note 96 for track 2 with instrument type 'm'
+  Processing note 97 for track 2 with instrument type 'm'
+  Processing note 98 for track 2 with instrument type 'm'
+  Processing note 99 for track 2 with instrument type 'm'
+  Processing note 100 for track 2 with instrument type 'm'
+  Processing note 101 for track 2 with instrument type 'm'
+  Processing note 102 for track 2 with instrument type 'm'
+  Processing note 103 for track 2 with instrument type 'm'
+  Processing note 104 for track 2 with instrument type 'm'
+  Processing note 105 for track 2 with instrument type 'm'
+  Processing note 106 for track 2 with instrument type 'm'
+  Processing note 107 for track 2 with instrument type 'm'
+  Processing note 108 for track 2 with instrument type 'm'
+  Processing note 109 for track 2 with instrument type 'm'
+  Processing note 110 for track 2 with instrument type 'm'
+  Processing note 111 for track 2 with instrument type 'm'
+  Processing note 112 for track 2 with instrument type 'm'
+  Processing note 113 for track 2 with instrument type 'm'
+  Processing note 114 for track 2 with instrument type 'm'
+  Processing note 115 for track 2 with instrument type 'm'
+  Processing note 116 for track 2 with instrument type 'm'
+  Processing note 117 for track 2 with instrument type 'm'
+  Processing note 118 for track 2 with instrument type 'm'
+  Processing note 119 for track 2 with instrument type 'm'
+  Processing note 120 for track 2 with instrument type 'm'
+  Processing note 121 for track 2 with instrument type 'm'
+  Processing note 122 for track 2 with instrument type 'm'
+  Processing note 123 for track 2 with instrument type 'm'
+  Processing note 124 for track 2 with instrument type 'm'
+  Processing note 125 for track 2 with instrument type 'm'
+  Processing note 126 for track 2 with instrument type 'm'
+  Processing note 127 for track 2 with instrument type 'm'
+  Processing note 128 for track 2 with instrument type 'm'
+Track 2 processed 128 notes
+Found polyphonic chord with 2 notes: [70 74]
+Created ornament 1: L0,0,4,4
+Generated ornament 1 for base note 70
+Found polyphonic chord with 2 notes: [62 65]
+Created ornament 2: L0,0,3,3
+Generated ornament 2 for base note 62
+Found polyphonic chord with 2 notes: [63 67]
+Generated ornament 1 for base note 63
+Found polyphonic chord with 2 notes: [67 70]
+Generated ornament 2 for base note 67
+Found polyphonic chord with 2 notes: [65 69]
+Generated ornament 1 for base note 65
+Found polyphonic chord with 2 notes: [62 67]
+Created ornament 3: L0,0,5,5
+Generated ornament 3 for base note 62
+Found polyphonic chord with 2 notes: [70 74]
+Generated ornament 1 for base note 70
+Found polyphonic chord with 2 notes: [62 65]
+Generated ornament 2 for base note 62
+Found polyphonic chord with 2 notes: [63 67]
+Generated ornament 1 for base note 63
+Found polyphonic chord with 2 notes: [67 70]
+Generated ornament 2 for base note 67
+Found polyphonic chord with 2 notes: [65 69]
+Generated ornament 1 for base note 65
+Found polyphonic chord with 2 notes: [62 67]
+Generated ornament 3 for base note 62
+Found polyphonic chord with 2 notes: [70 74]
+Generated ornament 1 for base note 70
+Found polyphonic chord with 2 notes: [62 65]
+Generated ornament 2 for base note 62
+Found polyphonic chord with 2 notes: [63 67]
+Generated ornament 1 for base note 63
+Found polyphonic chord with 2 notes: [67 70]
+Generated ornament 2 for base note 67
+Found polyphonic chord with 2 notes: [65 69]
+Generated ornament 1 for base note 65
+Found polyphonic chord with 2 notes: [62 67]
+Generated ornament 3 for base note 62
+Found polyphonic chord with 2 notes: [70 74]
+Generated ornament 1 for base note 70
+Found polyphonic chord with 2 notes: [62 65]
+Generated ornament 2 for base note 62
+Found polyphonic chord with 2 notes: [63 67]
+Generated ornament 1 for base note 63
+Found polyphonic chord with 2 notes: [67 70]
+Generated ornament 2 for base note 67
+Found polyphonic chord with 2 notes: [65 69]
+Generated ornament 1 for base note 65
+Found polyphonic chord with 2 notes: [62 67]
+Generated ornament 3 for base note 62
+Found polyphonic chord with 3 notes: [62 65 46]
+Created ornament 4: L0,0,16,16,19,19
+Generated ornament 4 for base note 46
+Found polyphonic chord with 3 notes: [46 58 62]
+Created ornament 5: L0,0,12,12,16,16
+Generated ornament 5 for base note 46
+Found polyphonic chord with 3 notes: [46 51 55]
+Created ornament 6: L0,0,5,5,9,9
+Generated ornament 6 for base note 46
+Found polyphonic chord with 2 notes: [58 63]
+Generated ornament 3 for base note 58
+Found polyphonic chord with 2 notes: [53 58]
+Generated ornament 3 for base note 53
+Found polyphonic chord with 2 notes: [53 57]
+Generated ornament 1 for base note 53
+Found polyphonic chord with 3 notes: [62 65 46]
+Generated ornament 4 for base note 46
+Found polyphonic chord with 3 notes: [46 58 62]
+Generated ornament 5 for base note 46
+Found polyphonic chord with 3 notes: [46 51 55]
+Generated ornament 6 for base note 46
+Found polyphonic chord with 2 notes: [58 63]
+Generated ornament 3 for base note 58
+Found polyphonic chord with 2 notes: [53 58]
+Generated ornament 3 for base note 53
+Found polyphonic chord with 2 notes: [53 57]
+Generated ornament 1 for base note 53
+--- making ornaments ---
+pchan:0
+pchan:1
+pchan:2
+pchan:3
+pchan:4
+--- applying delays ---
+--- mixing channels ---
+Generated 6 ornaments before output
+Conversion complete: flime.txt

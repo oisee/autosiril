@@ -1,7 +1,7 @@
 chan_settings: [5du-4du+-3du+ 1p 2m]
 Starting MIDI to VortexTracker conversion...
 MIDI File: ../test/flim.mid
-Format: 4980352
+Format: 4979904
 Number of tracks: 6
 Time format: 480 MetricTicks
 
@@ -34,11 +34,17 @@ detected key: 3 (D# major)
 vchan:0
 vchan:1
 vchan:2
+Track 2 processed 128 notes
+Track 5 processed 356 notes
 Track 4 processed 448 notes
 Track 3 processed 64 notes
-Track 2 processed 128 notes
-Track 0 processed 0 notes
 Track 1 processed 147 notes
+Created ornament 1: L0,0,4,4
+Created ornament 2: L0,0,3,3
+Created ornament 3: L0,0,5,5
+Created ornament 4: L0,0,16,16,19,19
+Created ornament 5: L0,0,12,12,16,16
+Created ornament 6: L0,0,5,5,9,9
 --- making ornaments ---
 pchan:0
 pchan:1

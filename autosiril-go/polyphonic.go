@@ -121,7 +121,7 @@ func (pp *PolyphonicProcessor) FlattenNotes(virtualNotes []*VirtualNote, maxRow 
 						
 						// Generate ornaments for polyphonic channels
 						if chanSetting.InstrumentType == "p" && copyNote.Type == "s" && len(copyNote.ChordNotes) > 1 {
-							baseNote, ornamentNum := ornamentGen.ProcessChordNotes(copyNote.ChordNotes)
+								baseNote, ornamentNum := ornamentGen.ProcessChordNotes(copyNote.ChordNotes)
 							copyNote.Note = baseNote
 							copyNote.Pitch = baseNote % 12
 							copyNote.Octave = baseNote / 12
@@ -130,7 +130,7 @@ func (pp *PolyphonicProcessor) FlattenNotes(virtualNotes []*VirtualNote, maxRow 
 							}
 							// Store ornament number for later use in VortexNote
 							copyNote.Settings = fmt.Sprintf("ornament:%d", ornamentNum)
-						}
+							}
 						
 						timelines[vChanIndex][i] = copyNote
 					}
