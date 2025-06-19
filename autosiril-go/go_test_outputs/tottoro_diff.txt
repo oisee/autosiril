@@ -1,5 +1,5 @@
---- ./ruby_test_outputs/tottoro_ruby.txt	2025-06-19 16:21:50.138159627 +0100
-+++ ./go_test_outputs/tottoro_go.txt	2025-06-19 16:21:49.843372396 +0100
+--- ./ruby_test_outputs/tottoro_ruby.txt	2025-06-19 21:26:13.462281299 +0100
++++ ./go_test_outputs/tottoro_go.txt	2025-06-19 21:26:13.246022796 +0100
 @@ -6,52 +6,42 @@
  NoteTable=4
  ChipFreq=1750000

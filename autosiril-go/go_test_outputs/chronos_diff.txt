@@ -1,5 +1,5 @@
---- ./ruby_test_outputs/chronos_ruby.txt	2025-06-19 16:21:50.289764489 +0100
-+++ ./go_test_outputs/chronos_go.txt	2025-06-19 16:21:50.184483335 +0100
+--- ./ruby_test_outputs/chronos_ruby.txt	2025-06-19 21:26:13.606453636 +0100
++++ ./go_test_outputs/chronos_go.txt	2025-06-19 21:26:13.513165652 +0100
 @@ -6,27 +6,8 @@
  NoteTable=4
  ChipFreq=1750000

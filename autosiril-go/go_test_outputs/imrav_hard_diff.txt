@@ -1,5 +1,5 @@
---- ./ruby_test_outputs/imrav_hard_ruby.txt	2025-06-19 16:21:49.742302489 +0100
-+++ ./go_test_outputs/imrav_hard_go.txt	2025-06-19 16:21:49.455937750 +0100
+--- ./ruby_test_outputs/imrav_hard_ruby.txt	2025-06-19 21:26:13.152734815 +0100
++++ ./go_test_outputs/imrav_hard_go.txt	2025-06-19 21:26:12.906793770 +0100
 @@ -6,34 +6,27 @@
  NoteTable=4
  ChipFreq=1750000

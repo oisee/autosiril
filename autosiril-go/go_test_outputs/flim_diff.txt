@@ -1,5 +1,5 @@
---- ./ruby_test_outputs/flim_ruby.txt	2025-06-19 16:21:48.504196123 +0100
-+++ ./go_test_outputs/flim_go.txt	2025-06-19 16:21:48.314690045 +0100
+--- ./ruby_test_outputs/flim_ruby.txt	2025-06-19 21:26:12.270739350 +0100
++++ ./go_test_outputs/flim_go.txt	2025-06-19 21:26:12.168970643 +0100
 @@ -6,31 +6,27 @@
  NoteTable=4
  ChipFreq=1750000
