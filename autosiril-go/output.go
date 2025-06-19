@@ -18,6 +18,7 @@ func NewVortexOutputGenerator(config *AutosirilConfig) *VortexOutputGenerator {
 func (vog *VortexOutputGenerator) GenerateOutput(channels [][]*VortexNote, ornaments []Ornament, channelSettings [][]ChannelSettings, detectedKey int) string {
 	var output strings.Builder
 	
+	
 	// Module header
 	vog.writeModuleHeader(&output, channelSettings)
 	

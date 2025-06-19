@@ -117,7 +117,7 @@ func NewVortexNote(timelineNote *TimelineNote) *VortexNote {
 		InstrumentKind: timelineNote.InstrumentKind,
 		Channel:        timelineNote.Channel,
 		Settings:       timelineNote.Settings,
-		Sample:         1,
+		Sample:         2, // Default sample is 2 to match Ruby
 		Envelope:       0,
 		Ornament:       0,
 	}

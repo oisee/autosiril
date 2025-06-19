@@ -44,32 +44,73 @@ func (pp *PolyphonicProcessor) FlattenNotes(virtualNotes []*VirtualNote, maxRow 
 		}
 	}
 	
-	// Process notes for each channel setting separately (this allows track duplication)
-	vChanIndex = 0
-	for ayIdx, ayChannel := range channelSettings {
-		for settingIdx, chanSetting := range ayChannel {
-			fmt.Printf("Processing AY channel %d, setting %d, MIDI track %d -> virtual channel %d\n", ayIdx, settingIdx, chanSetting.MIDIChannel, vChanIndex)
+	// Process notes for each unique MIDI track first, then duplicate to virtual channels
+	trackTimelines := make(map[int][]*TimelineNote)
+	
+	// Get unique MIDI tracks that are referenced
+	uniqueTracks := make(map[int]ChannelSettings)
+	for _, ayChannel := range channelSettings {
+		for _, chanSetting := range ayChannel {
+			if _, exists := uniqueTracks[chanSetting.MIDIChannel]; !exists {
+				uniqueTracks[chanSetting.MIDIChannel] = chanSetting
+			}
+		}
+	}
+	
+	// Process each unique track once
+	for midiTrack, setting := range uniqueTracks {
+		// Create timeline for this track
+		timeline := make([]*TimelineNote, maxRow+pp.config.SkipLines+1)
+		for j := range timeline {
+			timeline[j] = NewTimelineNote(0, 0, ".")
+		}
+		
+		// Process all virtual notes that match this MIDI track
+		for _, vNote := range virtualNotes {
+			if vNote.Channel != midiTrack {
+				continue // Skip notes not from this MIDI track
+			}
 			
-			// Process all virtual notes that match this MIDI track
-			for _, vNote := range virtualNotes {
-				if vNote.Channel != chanSetting.MIDIChannel {
-					continue // Skip notes not from this MIDI track
-				}
-				
-				fmt.Printf("rchan:%d note:%d->%s%d\n", vChanIndex, vNote.Note, Pitches[vNote.Note%12], vNote.Note/12-1)
-				
-				start := vNote.Start + pp.config.SkipLines
-				end := vNote.Off + pp.config.SkipLines
-				
-				if start < 0 || start >= len(timelines[vChanIndex]) {
-					continue
-				}
-				
-				switch chanSetting.InstrumentType {
-				case "m", "d", "e": // Monophonic
-					pp.processMonophonicNote(timelines[vChanIndex], vNote, start, end, &chanSetting)
-				case "p": // Polyphonic  
-					pp.processPolyphonicNote(timelines[vChanIndex], vNote, start, end, &chanSetting)
+			start := vNote.Start + pp.config.SkipLines
+			end := vNote.Off + pp.config.SkipLines
+			
+			if start < 0 || start >= len(timeline) {
+				continue
+			}
+			
+			switch setting.InstrumentType {
+			case "m", "d", "e": // Monophonic
+				pp.processMonophonicNote(timeline, vNote, start, end, &setting)
+			case "p": // Polyphonic  
+				pp.processPolyphonicNote(timeline, vNote, start, end, &setting)
+			}
+		}
+		
+		trackTimelines[midiTrack] = timeline
+	}
+	
+	// Now assign processed track data to virtual channels
+	vChanIndex = 0
+	for _, ayChannel := range channelSettings {
+		for _, chanSetting := range ayChannel {
+			
+			// Copy the processed timeline for this track
+			if sourceTimeline, exists := trackTimelines[chanSetting.MIDIChannel]; exists {
+				for i, note := range sourceTimeline {
+					if i < len(timelines[vChanIndex]) {
+						// Create a copy of the note with the correct instrument type
+						copyNote := &TimelineNote{
+							Note:           note.Note,
+							Volume:         note.Volume,
+							Type:           note.Type,
+							Pitch:          note.Pitch,
+							Octave:         note.Octave,
+							InstrumentKind: chanSetting.InstrumentType,
+							Channel:        note.Channel,
+							Settings:       note.Settings,
+						}
+						timelines[vChanIndex][i] = copyNote
+					}
 				}
 			}
 			vChanIndex++
@@ -122,15 +163,13 @@ func (pp *PolyphonicProcessor) processMonophonicNote(timeline []*TimelineNote, v
 }
 
 func (pp *PolyphonicProcessor) processPolyphonicNote(timeline []*TimelineNote, vNote *VirtualNote, start, end int, setting *ChannelSettings) {
-	// For polyphonic, collect chords and process them
-	// This is a simplified version - the full polyphonic processing
-	// would need to collect simultaneous notes and create ornaments
+	// For polyphonic, take highest note if there's a conflict (simplified approach)
+	// TODO: Full polyphonic processing would collect simultaneous notes and create ornaments
 	
 	for pos := start; pos < end && pos < len(timeline); pos++ {
 		if pos == start {
-			// Note start - for now, just store like monophonic
-			// In full implementation, this would collect chord members
-			if timeline[pos].Type == "." {
+			// Note start - take highest note like monophonic for now
+			if timeline[pos].Type == "." || vNote.Note > timeline[pos].Note {
 				timeline[pos] = NewTimelineNote(vNote.Note, vNote.Volume, "s")
 				timeline[pos].InstrumentKind = setting.InstrumentType
 				timeline[pos].Channel = vNote.Channel

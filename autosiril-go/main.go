@@ -26,6 +26,7 @@ func main() {
 		os.Exit(1)
 	}
 	
+	
 	// Load MIDI
 	midiProcessor := NewMidiProcessor(config)
 	virtualNotes, maxRow, err := midiProcessor.LoadMIDI()
@@ -112,7 +113,7 @@ func parseChannelSetting(setting string) (ChannelSettings, error) {
 	// Examples: 2me, 3m-7m-6p+, 2me[2f]-6p[3]+, 1d-2me-3p, 4m[uf]-5m[2]+
 	
 	result := ChannelSettings{
-		Sample:   1,
+		Sample:   2, // Default sample is 2 in Ruby
 		Ornament: 0,
 		MixOption: "-", // Default mix option
 	}
