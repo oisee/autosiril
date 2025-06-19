@@ -2,7 +2,7 @@
 VortexTrackerII=0
 Version=3.5
 Title=2me,3m,4m
-Author=oisee/siril^4d 2025.06.18
+Author=oisee/siril^4d 2025.06.19
 NoteTable=4
 ChipFreq=1750000
 Speed=4

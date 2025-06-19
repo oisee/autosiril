@@ -1,0 +1,120 @@
+chan_settings: ["p", "p", "p"]
+track , num_tracks 6, index 0
+track #<MIDI::Track:0x00005ad4a93872b8>, num_tracks 6, index 1
+track #<MIDI::Track:0x00005ad4a93859b8>, num_tracks 6, index 2
+track #<MIDI::Track:0x00005ad4a93a4908>, num_tracks 6, index 3
+track #<MIDI::Track:0x00005ad4a9234078>, num_tracks 6, index 4
+track #<MIDI::Track:0x00005ad4a90f02e8>, num_tracks 6, index 5
+track #<MIDI::Track:0x00005ad4a93adda0>, num_tracks 6, index 6
+   track:#<MIDI::Track:0x00005ad4a93872b8>
+   track:#<MIDI::Track:0x00005ad4a93859b8>
+   track:#<MIDI::Track:0x00005ad4a93a4908>
+   track:#<MIDI::Track:0x00005ad4a9234078>
+   track:#<MIDI::Track:0x00005ad4a90f02e8>
+   track:#<MIDI::Track:0x00005ad4a93adda0>
+max_row:1674
+vchan:1
+vchan:1
+vchan:1
+--- detecting base note (for major)---
+vchan:0
+p
+vchan:1
+p
+vchan:2
+p
+key notes: ---{
+key notes: ---}
+statistic: ---{
+0 0 0 0 0 0 0 0 0 0 0 0 
+statistic: ---}
+penalties: ---{
+0 0 0 0 0 0 0 0 0 0 0 0 penalties: ---}
+good_key:0
+--- flatting polynotes ---
+rchan:0
+rchan:1
+rchan:2
+--- making ornaments ---
+pchan:0
+pchan:1
+pchan:2
+--- making delay ---
+lchan:0
+lchan:1
+lchan:2
+--- mixing channels ---
+0
+mixing lchan:0 into 0
+1
+mixing lchan:1 into 1
+2
+mixing lchan:2 into 2
+--- render into text ---
+===pattern: 0
+new pattern: 0
+===pattern: 1
+new pattern: 1
+===pattern: 2
+new pattern: 2
+===pattern: 3
+pattern 3 is equal to 1
+===pattern: 4
+pattern 4 is equal to 2
+===pattern: 5
+pattern 5 is equal to 1
+===pattern: 6
+pattern 6 is equal to 2
+===pattern: 7
+pattern 7 is equal to 1
+===pattern: 8
+new pattern: 8
+===pattern: 9
+new pattern: 9
+===pattern: 10
+new pattern: 10
+===pattern: 11
+new pattern: 11
+===pattern: 12
+new pattern: 12
+===pattern: 13
+pattern 13 is equal to 9
+===pattern: 14
+pattern 14 is equal to 10
+===pattern: 15
+pattern 15 is equal to 11
+===pattern: 16
+new pattern: 16
+===pattern: 17
+new pattern: 17
+===pattern: 18
+new pattern: 18
+===pattern: 19
+new pattern: 19
+===pattern: 20
+new pattern: 20
+===pattern: 21
+pattern 21 is equal to 16
+===pattern: 22
+pattern 22 is equal to 17
+===pattern: 23
+pattern 23 is equal to 18
+===pattern: 24
+pattern 24 is equal to 19
+===pattern: 25
+pattern 25 is equal to 20
+ornaments.inspect: {"L0,0"=>0, "L0,0,5,5"=>1, "L0,0,7,7"=>2, "L0,0,3,3"=>3}
+ornaments.inspect: {0=>"L0,0", 1=>"L0,0,5,5", 2=>"L0,0,7,7", 3=>"L0,0,3,3"}
+Index: 0 - Element: flim.mid
+Index: 1 - Element: 2p,2p,2p
+Index: 2 - Element: 8
+Index: 3 - Element: 6
+Index: 4 - Element: 12
+Index: 5 - Element: 0
+Index: 6 - Element: 0
+Index: 7 - Element: 2
+Index: 8 - Element: 24
+Skip Lines:
+0
+Pattern Size:
+64

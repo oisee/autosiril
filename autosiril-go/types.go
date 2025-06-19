@@ -50,6 +50,7 @@ type TimelineNote struct {
 	InstrumentKind string
 	Channel        int
 	Settings       string
+	ChordNotes     []int // For polyphonic: all simultaneous notes for ornament generation
 }
 
 func NewTimelineNote(note, volume int, noteType string) *TimelineNote {

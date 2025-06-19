@@ -42,14 +42,13 @@ func main() {
 	
 	// Flatten notes to timeline
 	polyphonicProcessor := NewPolyphonicProcessor(config)
-	timelines, err := polyphonicProcessor.FlattenNotes(virtualNotes, maxRow, channelSettings)
+	timelines, ornamentGenerator, err := polyphonicProcessor.FlattenNotes(virtualNotes, maxRow, channelSettings)
 	if err != nil {
 		fmt.Printf("Error flattening notes: %v\n", err)
 		os.Exit(1)
 	}
 	
 	// Generate ornaments
-	ornamentGenerator := NewOrnamentGenerator(config)
 	ornaments := ornamentGenerator.GenerateOrnaments(timelines)
 	
 	// Apply echo effects

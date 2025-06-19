@@ -1,0 +1,3 @@
+# autosiril
+./polyphonic.go:102:6: ayIdx declared and not used
+./polyphonic.go:103:7: settingIdx declared and not used

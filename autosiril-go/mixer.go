@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+	"strings"
+)
 
 // ChannelMixer handles multi-channel mixing to AY channels
 type ChannelMixer struct {
@@ -93,7 +97,16 @@ func (cm *ChannelMixer) applyInstrumentSettings(note *VortexNote, setting *Chann
 		
 	case "p": // Polyphonic
 		note.Sample = setting.Sample
-		note.Ornament = setting.Ornament
+		// Check if ornament was generated from chord data
+		if strings.HasPrefix(note.Settings, "ornament:") {
+			if ornNum, err := strconv.Atoi(strings.TrimPrefix(note.Settings, "ornament:")); err == nil {
+				note.Ornament = ornNum
+			} else {
+				note.Ornament = setting.Ornament
+			}
+		} else {
+			note.Ornament = setting.Ornament
+		}
 		note.Envelope = 15
 		
 	case "e": // Envelope
