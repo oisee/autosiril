@@ -820,6 +820,59 @@ def apply_delays(lmod)
   dmod
 end
 
+# Step 6b: build_btp_lmod_with_delays — For BTP output, create interleaved
+# original + delay-only channels: [ch0_orig, ch0_echo, ch1_orig, ch1_echo, ...]
+# Original channels have clean notes (no delay mixed in).
+# Echo channels have only the time-shifted, volume-reduced copies.
+def build_btp_lmod_with_delays(lmod_clean)
+  puts "--- building BTP delay channels ---"
+  btp_lmod = []
+  lmod_clean.each_with_index do |lchan, lchan_i|
+    # Add original channel (clean, no delay)
+    btp_lmod << lchan
+
+    # Create echo-only channel
+    chan_len = [lchan.size, $set.max_row].max
+    echan = Array.new(chan_len)
+
+    is_unvoiced = $set.chan_settings[lchan_i].include?('u')
+    is_wide = $set.chan_settings[lchan_i].include?('w')
+
+    unless is_unvoiced
+      lchan.each_with_index do |lnote, lnote_i|
+        next if lnote.nil?
+
+        dnote = lnote.clone
+        dnote.volume = dnote.volume * 0.7
+
+        dnote2 = dnote.clone
+        dnote2.volume = dnote.volume * 0.7
+
+        if is_wide
+          # Wide stereo: double delay offsets
+          d2_pos = lnote_i + $set.per_delay2 * 2
+          d1_pos = lnote_i + $set.per_delay * 2
+        else
+          d2_pos = lnote_i + $set.per_delay2
+          d1_pos = lnote_i + $set.per_delay
+        end
+
+        # Second echo first (further away, lower priority)
+        if d2_pos < chan_len && (echan[d2_pos].nil? || echan[d2_pos].type == 'r')
+          echan[d2_pos] = dnote2
+        end
+        # First echo (closer, overwrites if collision)
+        if d1_pos < chan_len && (echan[d1_pos].nil? || echan[d1_pos].type == 'r')
+          echan[d1_pos] = dnote
+        end
+      end
+    end
+
+    btp_lmod << echan
+  end
+  btp_lmod
+end
+
 # Step 7: downmix — Mix virtual channels down to 3 AY hardware channels
 def downmix(lmod)
   puts "--- mixing channels ---"
@@ -1026,22 +1079,23 @@ good_key = detect_key(rmod)
 rmod = apply_diatonic_transpose(rmod, good_key)
 pmod = rmod2pmod(rmod)
 lmod, ornaments = pmod2lmod(pmod)
-lmod = apply_delays(lmod)
 
 # === BRANCHING POINT ===
-# After apply_delays, each virtual channel has complete LNote data.
-# lmod[i] = array of LNote (one per row) for virtual channel i
-# We can now branch to BTP output without losing any per-channel information.
+# Before apply_delays: each virtual channel has clean LNote data from its MIDI source.
+# BTP path branches here to keep original + delay as separate virtual channels.
+# VT path applies delays mixed into channels, then downmixes to 3 hw channels.
 
 if $set.output_format == 'btp' || $set.output_format == 'both'
   require_relative './bitphase_output'
+  btp_lmod = build_btp_lmod_with_delays(lmod)
   btp_file = $set.in_file.sub(/\.mid$/i, '') + '.btp'
-  BitphaseOutputGenerator.new(lmod, ornaments, $set).write(btp_file)
+  BitphaseOutputGenerator.new(btp_lmod, ornaments, $set, delay_channels: true).write(btp_file)
   puts "BTP output written to: #{btp_file}"
 end
 
 if $set.output_format == 'vt' || $set.output_format == 'both'
-  # VT path: downmix to 3 channels, render, output
+  # VT path: apply delays (mixed into channels), downmix to 3, render, output
+  lmod = apply_delays(lmod)
   mmod = downmix(lmod)
   lmod_mixed = mmod
 

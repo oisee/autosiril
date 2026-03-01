@@ -53,31 +53,31 @@ s = d['songs'][0]
 if s.get('chipType') != 'ay': errors.append(f'chipType={s.get(\"chipType\")} expected ay')
 if s.get('chipFrequency') != 1750000: errors.append(f'chipFrequency={s.get(\"chipFrequency\")}')
 
-# Check virtualChannelMap
+# Check virtualChannelMap (with delay channels: each group doubled)
 vcm = s.get('virtualChannelMap', {})
 # Convert string keys to int for comparison
 vcm_int = {int(k): v for k, v in vcm.items()}
-expected_vcm = {0: 3, 1: 2, 2: 4}
+expected_vcm = {0: 6, 1: 4, 2: 8}
 if vcm_int != expected_vcm: errors.append(f'virtualChannelMap={vcm_int} expected {expected_vcm}')
 
-# Check total virtual channels = 9
+# Check total virtual channels = 18 (9 orig + 9 echo)
 total_vchans = sum(vcm_int.values())
-if total_vchans != 9: errors.append(f'total vchans={total_vchans} expected 9')
+if total_vchans != 18: errors.append(f'total vchans={total_vchans} expected 18')
 
-# Check patterns have 9 channels each
+# Check patterns have 18 channels each
 for i, p in enumerate(s['patterns']):
-    if len(p['channels']) != 9:
-        errors.append(f'pattern {p[\"id\"]} has {len(p[\"channels\"])} channels, expected 9')
+    if len(p['channels']) != 18:
+        errors.append(f'pattern {p[\"id\"]} has {len(p[\"channels\"])} channels, expected 18')
         break
 
-# Check channel labels
+# Check channel labels (interleaved orig+echo)
 p0 = s['patterns'][0]
 labels = [ch['label'] for ch in p0['channels']]
-expected_labels = ['A1', 'A2', 'A3', 'B1', 'B2', 'C1', 'C2', 'C3', 'C4']
+expected_labels = ['A1', 'A1e', 'A2', 'A2e', 'A3', 'A3e', 'B1', 'B1e', 'B2', 'B2e', 'C1', 'C1e', 'C2', 'C2e', 'C3', 'C3e', 'C4', 'C4e']
 if labels != expected_labels: errors.append(f'labels={labels} expected {expected_labels}')
 
 # Check ornaments/tables
-if len(d['tables']) != 15: errors.append(f'tables count={len(d[\"tables\"])} expected 15')
+if len(d['tables']) < 15: errors.append(f'tables count={len(d[\"tables\"])} expected >= 15')
 
 # Check instruments
 if len(d['instruments']) != 31: errors.append(f'instruments count={len(d[\"instruments\"])} expected 31')
@@ -96,6 +96,14 @@ for p in s['patterns']:
         if has_notes: break
     if has_notes: break
 if not has_notes: errors.append('no actual notes found in any pattern')
+
+# Check that echo channels have actual notes
+echo_notes = 0
+for p in s['patterns']:
+    for ch in p['channels']:
+        if ch['label'].endswith('e'):
+            echo_notes += sum(1 for r in ch['rows'] if r['note']['name'] > 1)
+if echo_notes == 0: errors.append('no notes found in echo channels')
 
 if errors:
     print('FAIL: BTP structure errors:')

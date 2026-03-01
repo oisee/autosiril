@@ -26,10 +26,11 @@ class BitphaseOutputGenerator
   NOTE_OFF  = 1
   NOTE_C    = 2  # C=2, C#=3, D=4, ..., B=13
 
-  def initialize(lmod, ornaments_hash, setup)
+  def initialize(lmod, ornaments_hash, setup, delay_channels: false)
     @lmod = lmod              # Array of virtual channels, each an array of LNote|nil
     @ornaments = ornaments_hash # {"L0,0"=>0, "L0,0,4,4,7,7"=>1, ...}
     @set = setup
+    @delay_channels = delay_channels  # true when lmod has interleaved orig+echo pairs
   end
 
   def write(filename)
@@ -78,30 +79,40 @@ class BitphaseOutputGenerator
 
   # Build virtualChannelMap from sources_mix
   # sources_mix = [[0,1,2],[3,4],[5,6,7,8]] → {0=>3, 1=>2, 2=>4}
+  # With delay_channels: each group doubles → {0=>6, 1=>4, 2=>8}
   def build_virtual_channel_map
     map = {}
     @set.sources_mix.each_with_index do |group, hw_i|
-      map[hw_i] = group.size
+      count = group.size
+      count *= 2 if @delay_channels
+      map[hw_i] = count
     end
     map
   end
 
   # Compute effective channel labels: A1,A2,A3,B1,B2,C1,C2,C3,C4
+  # With delay_channels: interleaved orig+echo: A1,A1e,A2,A2e,...
   def effective_channel_labels
     hw_labels = ['A', 'B', 'C']
     labels = []
     @set.sources_mix.each_with_index do |group, hw_i|
       if group.size <= 1
         labels << hw_labels[hw_i]
+        labels << "#{hw_labels[hw_i]}e" if @delay_channels
       else
-        group.size.times { |v| labels << "#{hw_labels[hw_i]}#{v + 1}" }
+        group.size.times do |v|
+          labels << "#{hw_labels[hw_i]}#{v + 1}"
+          labels << "#{hw_labels[hw_i]}#{v + 1}e" if @delay_channels
+        end
       end
     end
     labels
   end
 
   def total_vchan_count
-    @set.sources_mix.sum { |g| g.size }
+    count = @set.sources_mix.sum { |g| g.size }
+    count *= 2 if @delay_channels
+    count
   end
 
   # Convert ornaments hash to Bitphase Table array
