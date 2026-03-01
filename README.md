@@ -1,23 +1,44 @@
-# Autosiril - MIDI to VortexTracker Converter
+# Autosiril - MIDI to AY-3-8910 Converter
 
-Autosiril is a Ruby tool that converts MIDI files to text format for Vortex Tracker Improved (VTI), enabling the creation of chiptune music for the AY-3-8910 sound chip.
+Autosiril converts MIDI files into chiptune music for the AY-3-8910/YM2149 sound chip. It outputs both **VortexTracker II** text format (3 hardware channels) and **Bitphase `.btp`** format (unlimited virtual channels with per-channel echo).
+
+```
+                              MIDI file
+                                  |
+                            [ autooisee.rb ]
+                                  |
+            MIDI parse -> channel mapping -> key detection
+                -> polyphonic flattening -> ornament generation
+                                  |
+                      +-----------+-----------+
+                      |                       |
+                 [BTP path]              [VT path]
+              split echo into         mix echo into
+             separate channels          same channel
+                      |                       |
+              BitphaseOutput            downmix to 3
+              Generator                  AY channels
+                      |                       |
+                  .btp file             .mide.txt file
+            (gzipped JSON,           (VortexTracker II
+           loads in Bitphase)         text module)
+```
 
 ## Files Overview
 
-- **`autosiril.rb`** - Original working converter script (stable, monolithic)
-- **`autosiril_refactored.rb`** - **NEW** Clean, modular refactored version - produces 100% identical output!
-- **`autosiril-go/`** - **NEW** Go reimplementation with core functionality working
-- **`main.rb`** - Old refactoring attempt (broken, do not use)
-- **`module_template.rb`** - VTI module header template with predefined samples
-- **`test/`** - Test MIDI files and shell scripts for testing conversions
+| File | Purpose |
+|------|---------|
+| **`autooisee.rb`** | Main converter — fresh refactoring from monolithic, with Bitphase output support |
+| **`bitphase_output.rb`** | `BitphaseOutputGenerator` — converts virtual channel data to `.btp` format |
+| **`sample_data.rb`** | All 31 VT2 instrument definitions as Ruby constants (verified against `module_template.rb`) |
+| **`autosiril.rb`** | Original monolithic implementation (golden reference for VT output) |
+| **`autosiril_refactored.rb`** | OOP refactoring (has known bugs — use `autooisee.rb` instead) |
+| **`module_template.rb`** | VT2 module header template with predefined samples |
+| **`autosiril-go/`** | Go reimplementation (4/6 test cases passing) |
+| **`test/`** | Test MIDI files, golden outputs, and test scripts |
+| **`docs/`** | Design documents and implementation notes |
 
-> ✅ **Recommended for Ruby**: Use `autosiril_refactored.rb` for new development - it's clean, well-documented, and produces **100% identical output** to the original.
-> 
-> ✅ **Recommended for Performance**: Use `autosiril-go/` for server deployments, CI/CD, or when performance matters - core functionality working with 4/6 test cases passing.
-> 
-> ✅ **Fully Compatible**: The refactored Ruby version has been thoroughly tested and verified to produce byte-for-byte identical VortexTracker files (except for timestamps and a PlayOrder optimization bug fix).
-> 
-> ⚠️ **Legacy**: `autosiril.rb` remains available for reference. `main.rb` is broken and should not be used.
+> **Recommended**: Use `autooisee.rb` — it produces byte-identical VT output to the monolithic original AND generates Bitphase `.btp` files with full virtual channel support.
 
 ## Requirements
 
@@ -127,20 +148,25 @@ gem install midilib
 ### Basic Syntax
 
 ```bash
-ruby autosiril.rb [INPUT_FILE] [CHANNEL_MAPPING] [PER_BEAT] [PER_DELAY] [PER_DELAY2] [PATTERN_SIZE] [SKIP_LINES] [ORN_REPEAT] [MAX_OFFSET] [DIATONIC_TRANSPOSE] [REAL_KEY]
+ruby autooisee.rb INPUT_FILE CHANNEL_MAPPING PER_BEAT PER_DELAY PER_DELAY2 \
+     [PATTERN_SIZE] [SKIP_LINES] [ORN_REPEAT] [MAX_OFFSET] \
+     [DIATONIC_TRANSPOSE] [REAL_KEY] [--format vt|btp|both]
 ```
 
 ### Quick Examples
 
 ```bash
-# Simple conversion with defaults
-ruby autosiril.rb song.mid
+# Simple conversion (VT output)
+ruby autooisee.rb song.mid "1d,2me,3p" 8 6 12
 
-# Complex example with channel mapping
-ruby autosiril.rb imrav.mid "2me[2f]-6p[3]+,3m[1e]-7m[6d]-6p[3]+-2mew+,4m[3c]-5m[2b]+-2me+" 8 6 12 0 64 2 24
+# Complex channel mapping (VT output)
+ruby autooisee.rb imrav.mid "2me[2f]-6p[3]+,3m[1e]-7m[6d]-6p[3]+-2mew+,4m[3c]-5m[2b]+-2me+" 8 6 12 0 64 2 24
 
-# Drums, bass, and melody
-ruby autosiril.rb track.mid "1du-2me,3p,4m" 4 3 6 64 0 1 12
+# Bitphase output with virtual channels
+ruby autooisee.rb song.mid "1d-2me,3p,4m" 8 6 12 0 64 2 6 --format btp
+
+# Both VT and Bitphase output
+ruby autooisee.rb song.mid "1d-2me,3p,4m" 8 6 12 0 64 2 6 --format both
 ```
 
 ## Parameters Reference
@@ -231,10 +257,71 @@ Format: `[MIDI_CHANNEL][TYPE][MODIFIERS][SAMPLES]-[NEXT_CHANNEL],[NEXT_AY_CHANNE
 
 ## Output
 
+### VortexTracker Output (default)
+
 The tool generates `.txt` files compatible with VortexTracker Improved:
 - **Format**: `[input_name][transpose_suffix]e.txt`
 - **Example**: `song.mid` → `song.mide.txt`
 - **With transpose**: `song.mid` + transpose=2 → `song.midd2e.txt`
+
+### Bitphase Output (`--format btp`)
+
+Generates `.btp` files (gzipped JSON) that load directly in the [Bitphase](https://github.com/paator/bitphase) tracker:
+
+```bash
+# BTP only
+ruby autooisee.rb song.mid "1d-2me,3p,4m" 8 6 12 0 64 2 6 --format btp
+
+# Both VT and BTP
+ruby autooisee.rb song.mid "1d-2me,3p,4m" 8 6 12 0 64 2 6 --format both
+```
+
+**What makes BTP output different from VT:**
+
+In VT mode, all virtual channels are mixed down to 3 AY hardware channels and echo is baked into the same channel. In BTP mode, every MIDI channel operation stays as its own virtual channel, and echo becomes a separate channel you can edit independently.
+
+**Virtual channels and echo:**
+
+Each source channel gets a paired echo channel. For example, tottoro's 9 source channels become 18 virtual channels:
+
+```
+Channel mapping: "1d-2me-3p,4m[uf]-5m[2]+,5m[6]-6me[2]+-3p[3]+-2mew+"
+
+Hardware A (6 vchans): A1(drums) A1e(echo) A2(bass+env) A2e(echo) A3(chords) A3e(echo)
+Hardware B (4 vchans): B1(melody)  B1e(echo) B2(melody)   B2e(echo)
+Hardware C (8 vchans): C1(melody) C1e(echo) C2(bass+env) C2e(echo) C3(chords) C3e(echo) C4(wide) C4e(echo)
+
+virtualChannelMap = {0: 6, 1: 4, 2: 8}
+```
+
+Unvoiced channels (`u` modifier) get empty echo channels — drums and effects don't need echo.
+
+Echo channels contain time-shifted copies at `per_delay` and `per_delay2` offsets with 0.7x volume reduction per bounce. Wide stereo (`w` modifier) doubles the delay offsets.
+
+**BTP format field mapping:**
+
+| Source (LNote) | Bitphase field | Notes |
+|----------------|---------------|-------|
+| `note` | `note.name` + `note.octave` | C=2..B=13, octave 1-8 |
+| `sample` | `instrument` | Sample index (0-31) |
+| `envelope` | `envelopeShape` | 0 = no envelope (important!) |
+| `ornament` | `table` | Ornament index; drums forced to 0 |
+| `volume` | `volume` | 0-15 |
+
+**Instruments**: All 31 VT2 sample definitions from `module_template.rb` are embedded in every `.btp` file via `sample_data.rb`.
+
+**Tables** (ornaments): Chord patterns like `L0,0,4,4,7,7` become `{rows: [0,0,4,4,7,7], loop: 0}`.
+
+**Test results:**
+
+| Test | Source Channels | With Echo | Notes |
+|------|----------------|-----------|-------|
+| tottoro | 9 | 18 | Most complex — drums, envelope, poly, wide stereo |
+| chronos | 3 | 6 | Simple 3-channel |
+| flim | 5 | 10 | Drum channels have empty echo (correct — unvoiced) |
+| imrav_simple | 3 | 6 | Basic |
+| imrav_medium | 6 | 12 | Multi-channel mixing |
+| imrav_hard | 9 | 18 | Complex with custom samples and ornaments |
 
 ## Testing
 
@@ -245,8 +332,10 @@ The project includes comprehensive test files with sample MIDI inputs and expect
 ```
 test/
 ├── *.mid                    # Sample MIDI files
-├── *.mide.sample.txt       # Expected VortexTracker output (reference)
+├── *.mide.sample.txt       # Expected VortexTracker output (golden reference)
+├── *.btp                   # Generated Bitphase files
 ├── test_*.sh              # Individual test scripts
+├── test_btp_tottoro.sh    # BTP structure + VT regression test
 └── test_regression.sh     # Regression test comparing both versions
 ```
 
@@ -255,16 +344,19 @@ test/
 ```bash
 cd test
 
-# Individual tests
+# VT regression tests
 ./test_flim.sh              # Simple drum test
 ./test_imrav_hard.sh        # Complex multi-channel test
-./test_imrav_medium.sh      # Medium complexity test  
+./test_imrav_medium.sh      # Medium complexity test
 ./test_imrav_simple.sh      # Simple multi-channel test
 ./test_tottoro.sh          # Full-featured test with ornaments
 ./test_chronos.sh          # Three-channel test
 
+# BTP output test (validates structure + VT regression)
+./test_btp_tottoro.sh
+
 # Manual testing
-ruby ../autosiril.rb tottoro_example.mid "1d-2me-3p,4m[uf]-5m[2]+,5m[6]-6me[2]+-3p[3]+-2mew+" 8 6 12 0 64 2 6
+ruby ../autooisee.rb tottoro_example.mid "1d-2me-3p,4m[uf]-5m[2]+,5m[6]-6me[2]+-3p[3]+-2mew+" 8 6 12 0 64 2 6 --format both
 ```
 
 ### Test Results Verification
@@ -332,43 +424,41 @@ K = 20  L = 21  M = 22  N = 23  O = 24  P = 25  Q = 26  R = 27  S = 28  T = 29
 U = 30  V = 31
 ```
 
-## Refactored Version Architecture
+## Architecture
 
-The `autosiril_refactored.rb` provides a clean, modular implementation with the following improvements:
+### `autooisee.rb` — Main Converter (Recommended)
 
-### **Object-Oriented Design**
-- **`AutosirilConverter`** - Main orchestrator class
-- **`AutosirilConfig`** - Configuration and argument parsing
-- **`MidiProcessor`** - MIDI file loading and note extraction
-- **`KeyProcessor`** - Musical key detection and transposition
-- **`PolyphonicProcessor`** - Polyphonic/monophonic note flattening
-- **`OrnamentGenerator`** - Chord-to-ornament conversion
-- **`EchoProcessor`** - Delay and echo effects
-- **`ChannelMixer`** - Multi-channel mixing to AY channels
-- **`VortexOutputGenerator`** - VortexTracker format generation
+A clean refactoring of the monolithic `autosiril.rb` into named pipeline functions while preserving exact algorithmic behavior. Produces byte-identical VT output to the original AND generates Bitphase `.btp` files.
 
-### **Data Structures**
+**Pipeline stages:**
+1. `seq2vmod` — MIDI parse, timing quantization
+2. `vmod2rmod` — Channel assignment, timeline grids
+3. `detect_key` — Key detection + diatonic transposition
+4. `rmod2pmod` — Polyphonic/monophonic/drum flattening
+5. `pmod2lmod` — Ornament generation, final note parameters
+6. **Branch point** — BTP path splits here
+7. `apply_delays` — Echo/delay (VT path only, mixed into channel)
+8. `downmix` — Mix to 3 AY channels (VT path only)
+9. `render_into_text` — VortexTracker text output
+
+### `BitphaseOutputGenerator` — BTP Generator
+
+Branches from the pipeline before delay application. Creates interleaved original+echo channel pairs, maps LNote data to Bitphase Row format, and serializes as gzipped JSON.
+
+### Legacy: `autosiril_refactored.rb`
+
+OOP refactoring with known bugs (wrong drum mapping, PlayOrder off-by-one on some test cases). Use `autooisee.rb` instead.
+
+### Data Structures
 - **`VirtualNote`** - MIDI note with tracker timing
 - **`TimelineNote`** - Timeline grid note with state (start/continue/release)
 - **`VortexNote`** - Final note with all VT parameters
 
-### **Key Features**
-- ✅ **100% identical output** to original (byte-for-byte verified)
-- ✅ **Comprehensive documentation** with inline comments
-- ✅ **Modular architecture** - easy to understand and modify
-- ✅ **Constants organized** in `AutosirilConstants` module
-- ✅ **Proper error handling** and validation
-- ✅ **Clean separation of concerns** - each class has single responsibility
-- ✅ **Bug fixes** - Corrects PlayOrder duplicate pattern issue from original
-
-### **Usage**
-```bash
-# Use exactly like the original
-ruby autosiril_refactored.rb input.mid "1d-2me,3p,4m" 4 3 6 64 0 1 12
-
-# Enable debug output
-DEBUG=1 ruby autosiril_refactored.rb input.mid "1d-2me,3p,4m" 4 3 6 64 0 1 12
-```
+### Key Features
+- VT output is byte-identical to monolithic `autosiril.rb` (verified across all 6 test cases)
+- Bitphase `.btp` output with full virtual channel support
+- All 31 instruments verified against VT2 sample definitions
+- Echo as separate virtual channels (editable independently in Bitphase)
 
 ## Comprehensive Reimplementation Guide
 
